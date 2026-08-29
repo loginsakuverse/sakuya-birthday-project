@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sakuya Birthday Project</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff5fa;
+            color: #5c4350;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 70px 20px 50px;
+            background: linear-gradient(180deg, #ffdce9, #fff5fa);
+        }
+
+        .small-title {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: #b87991;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #c85f83;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #8d6877;
+        }
+
+        /* YEARS */
+        .years {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .years-title {
+            text-align: center;
+            font-size: 25px;
+            color: #bd6685;
+            margin-bottom: 30px;
+        }
+
+        .year-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .year-card {
+            text-decoration: none;
+            background: white;
+            border-radius: 25px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(190, 110, 140, 0.12);
+            border: 1px solid #f8dce7;
+            transition: 0.3s;
+        }
+
+        .year-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(190, 110, 140, 0.22);
+        }
+
+        .year {
+            font-size: 38px;
+            font-weight: bold;
+            color: #cf6b8c;
+            margin-bottom: 12px;
+        }
+
+        .birthday {
+            font-size: 15px;
+            color: #90717d;
+        }
+
+        .heart {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 50px;
+            background: #ffe5ef;
+            color: #9a7180;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .year-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="small-title">SAKUYA BIRTHDAY PROJECT</div>
+
+        <h1>Happy Birthday, Sakuya ♡</h1>
+
+        <p class="subtitle">
+            A collection of birthday projects made with love
+        </p>
+    </header>
+
+
+    <section class="years">
+
+        <h2 class="years-title">Birthday Projects</h2>
+
+        <div class="year-grid">
+
+            <a class="year-card" href="#">
+                <div class="heart">♡</div>
+                <div class="year">2024</div>
+                <div class="birthday">
+                    Sakuya 17th Birthday
+                </div>
+            </a>
+
+
+            <a class="year-card" href="#">
+                <div class="heart">♡</div>
+                <div class="year">2025</div>
+                <div class="birthday">
+                    Sakuya 18th Birthday
+                </div>
+            </a>
+
+
+            <a class="year-card" href="#">
+                <div class="heart">♡</div>
+                <div class="year">2026</div>
+                <div class="birthday">
+                    Sakuya 19th Birthday
+                </div>
+            </a>
+
+
+            <a class="year-card" href="#">
+                <div class="heart">♡</div>
+                <div class="year">2027</div>
+                <div class="birthday">
+                    Sakuya 20th Birthday
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        Project by Sakuya Vietnamese Fans ♡
+        <br><br>
+        Made with love for Sakuya
+    </footer>
+
+</body>
+</html>
