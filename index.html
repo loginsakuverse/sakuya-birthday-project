@@ -1,189 +1,295 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sakuya Birthday Project</title>
+  <title>Our Memories — 2026</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #fff5fa;
-            color: #5c4350;
-        }
-
-        /* HEADER */
-        header {
-            text-align: center;
-            padding: 70px 20px 50px;
-            background: linear-gradient(180deg, #ffdce9, #fff5fa);
-        }
-
-        .small-title {
-            font-size: 14px;
-            letter-spacing: 3px;
-            color: #b87991;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            font-size: 42px;
-            color: #c85f83;
-            margin-bottom: 15px;
-        }
-
-        .subtitle {
-            font-size: 16px;
-            color: #8d6877;
-        }
-
-        /* YEARS */
-        .years {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .years-title {
-            text-align: center;
-            font-size: 25px;
-            color: #bd6685;
-            margin-bottom: 30px;
-        }
-
-        .year-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .year-card {
-            text-decoration: none;
-            background: white;
-            border-radius: 25px;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(190, 110, 140, 0.12);
-            border: 1px solid #f8dce7;
-            transition: 0.3s;
-        }
-
-        .year-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 12px 30px rgba(190, 110, 140, 0.22);
-        }
-
-        .year {
-            font-size: 38px;
-            font-weight: bold;
-            color: #cf6b8c;
-            margin-bottom: 12px;
-        }
-
-        .birthday {
-            font-size: 15px;
-            color: #90717d;
-        }
-
-        .heart {
-            font-size: 25px;
-            margin-bottom: 15px;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 50px 20px;
-            margin-top: 50px;
-            background: #ffe5ef;
-            color: #9a7180;
-            font-size: 13px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 32px;
-            }
-
-            .year-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="small-title">SAKUYA BIRTHDAY PROJECT</div>
+  <!-- HOME -->
+  <main id="homePage" class="page active">
 
-        <h1>Happy Birthday, Sakuya ♡</h1>
+    <section class="hero">
+      <div class="hero-decoration">♡</div>
 
-        <p class="subtitle">
-            A collection of birthday projects made with love
-        </p>
+      <p class="small-title">OUR MEMORIES</p>
+
+      <h1>2026</h1>
+
+      <p class="hero-description">
+        A little place to keep<br>
+        all our precious memories ♡
+      </p>
+    </section>
+
+
+    <section class="category-container">
+
+      <!-- EVENT -->
+      <button class="category-card event-card" onclick="openPage('eventPage')">
+
+        <div class="category-number">01</div>
+
+        <div class="category-info">
+          <span class="category-label">EVENT</span>
+          <h2>Our Events</h2>
+          <p>Moments we shared together</p>
+        </div>
+
+        <span class="arrow">→</span>
+
+      </button>
+
+
+      <!-- MESSAGE -->
+      <button class="category-card message-card" onclick="openPage('messagePage')">
+
+        <div class="category-number">02</div>
+
+        <div class="category-info">
+          <span class="category-label">MESSAGE</span>
+          <h2>Messages</h2>
+          <p>Words from everyone ♡</p>
+        </div>
+
+        <span class="arrow">→</span>
+
+      </button>
+
+    </section>
+
+    <footer>
+      Made with love ♡ 2026
+    </footer>
+
+  </main>
+
+
+  <!-- EVENT PAGE -->
+  <main id="eventPage" class="page">
+
+    <header class="subpage-header">
+      <button class="back-button" onclick="openPage('homePage')">
+        ← Back
+      </button>
+
+      <div>
+        <span class="category-label">2026</span>
+        <h1>Our Events</h1>
+      </div>
     </header>
 
 
-    <section class="years">
+    <section class="event-list">
 
-        <h2 class="years-title">Birthday Projects</h2>
+      <!-- EVENT 1 -->
+      <button class="event-item" onclick="openEvent('event1')">
 
-        <div class="year-grid">
-
-            <a class="year-card" href="#">
-                <div class="heart">♡</div>
-                <div class="year">2024</div>
-                <div class="birthday">
-                    Sakuya 17th Birthday
-                </div>
-            </a>
-
-
-            <a class="year-card" href="#">
-                <div class="heart">♡</div>
-                <div class="year">2025</div>
-                <div class="birthday">
-                    Sakuya 18th Birthday
-                </div>
-            </a>
-
-
-            <a class="year-card" href="#">
-                <div class="heart">♡</div>
-                <div class="year">2026</div>
-                <div class="birthday">
-                    Sakuya 19th Birthday
-                </div>
-            </a>
-
-
-            <a class="year-card" href="#">
-                <div class="heart">♡</div>
-                <div class="year">2027</div>
-                <div class="birthday">
-                    Sakuya 20th Birthday
-                </div>
-            </a>
-
+        <div class="event-cover">
+          <span>EVENT 01</span>
         </div>
+
+        <div class="event-text">
+          <h2>Event Name</h2>
+          <p>2026.00.00</p>
+        </div>
+
+        <span class="arrow">→</span>
+
+      </button>
+
+
+      <!-- EVENT 2 -->
+      <button class="event-item" onclick="openEvent('event2')">
+
+        <div class="event-cover cover-two">
+          <span>EVENT 02</span>
+        </div>
+
+        <div class="event-text">
+          <h2>Event Name</h2>
+          <p>2026.00.00</p>
+        </div>
+
+        <span class="arrow">→</span>
+
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- EVENT DETAIL PAGE -->
+  <main id="eventDetailPage" class="page">
+
+    <header class="subpage-header">
+
+      <button class="back-button" onclick="openPage('eventPage')">
+        ← Events
+      </button>
+
+      <div>
+        <span class="category-label">EVENT</span>
+        <h1 id="eventTitle">Event Name</h1>
+      </div>
+
+    </header>
+
+
+    <section class="event-gallery" id="eventGallery">
+
+      <!-- Images will appear here -->
+
+    </section>
+
+  </main>
+
+
+  <!-- MESSAGE PAGE -->
+  <main id="messagePage" class="page">
+
+    <header class="subpage-header">
+
+      <button class="back-button" onclick="openPage('homePage')">
+        ← Back
+      </button>
+
+      <div>
+        <span class="category-label">2026</span>
+        <h1>Messages</h1>
+      </div>
+
+    </header>
+
+
+    <!-- ADD MESSAGE BUTTON -->
+
+    <section class="message-intro">
+
+      <p>
+        Leave a photo and a little message
+        to keep in our memories ♡
+      </p>
+
+      <button class="post-button" onclick="openMessageForm()">
+        + Leave a Message
+      </button>
 
     </section>
 
 
-    <footer>
-        Project by Sakuya Vietnamese Fans ♡
-        <br><br>
-        Made with love for Sakuya
-    </footer>
+    <!-- MESSAGES -->
+
+    <section id="messageList" class="message-list">
+
+      <!-- Messages will appear here -->
+
+    </section>
+
+  </main>
+
+
+  <!-- MESSAGE FORM -->
+
+  <div id="messageModal" class="modal">
+
+    <div class="modal-box">
+
+      <button class="close-button" onclick="closeMessageForm()">
+        ×
+      </button>
+
+      <span class="category-label">LEAVE A MESSAGE</span>
+
+      <h2>Share your memory ♡</h2>
+
+
+      <!-- IMAGE -->
+
+      <label class="upload-box">
+
+        <input
+          type="file"
+          id="photoInput"
+          accept="image/*"
+          onchange="previewImage(event)"
+        >
+
+        <div id="uploadContent">
+
+          <div class="upload-icon">＋</div>
+
+          <strong>Upload your photo</strong>
+
+          <span>Tap here to choose a photo</span>
+
+        </div>
+
+        <img id="imagePreview" class="image-preview">
+
+      </label>
+
+
+      <!-- NAME -->
+
+      <label class="input-label">
+        Your name
+
+        <input
+          type="text"
+          id="nameInput"
+          placeholder="Enter your name"
+          maxlength="50"
+        >
+
+      </label>
+
+
+      <!-- MESSAGE -->
+
+      <label class="input-label">
+        Your message
+
+        <textarea
+          id="messageInput"
+          placeholder="Write something..."
+          maxlength="500"
+        ></textarea>
+
+      </label>
+
+
+      <button class="submit-button" onclick="submitMessage()">
+        POST ♡
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- IMAGE VIEWER -->
+
+  <div id="imageViewer" class="image-viewer" onclick="closeImageViewer()">
+
+    <button class="viewer-close">×</button>
+
+    <img id="viewerImage">
+
+  </div>
+
+
+  <script src="script.js"></script>
 
 </body>
 </html>
