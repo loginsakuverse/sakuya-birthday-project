@@ -5,21 +5,34 @@
 }
 
 :root {
-  --background: #f8f7f3;
+  --pink-dark: #c45b7a;
+  --pink: #e58ba5;
+  --pink-light: #f7cbd8;
+  --pink-pale: #fdebf1;
+  --pink-bg: #f8dce5;
+
   --white: #ffffff;
-  --text: #292929;
-  --subtext: #858585;
-  --line: #e7e4dd;
-  --accent: #758ca3;
-  --accent-light: #e8eef3;
+
+  --text: #552b38;
+  --text-light: #966978;
+  --line: rgba(196, 91, 122, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "DM Sans", sans-serif;
-  background: var(--background);
+  background: var(--pink-bg);
   color: var(--text);
   min-height: 100vh;
 }
+
+
+/* =========================
+   GENERAL
+========================= */
 
 button,
 input,
@@ -35,9 +48,9 @@ button {
 .page {
   display: none;
   min-height: 100vh;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-  padding: 40px 25px;
+  padding: 35px 30px 60px;
 }
 
 .page.active {
@@ -51,116 +64,233 @@ button {
 
 .hero {
   text-align: center;
-  padding: 80px 20px 50px;
-  position: relative;
+  padding: 65px 20px 45px;
 }
 
-.hero-decoration {
-  font-size: 40px;
-  margin-bottom: 15px;
-  color: var(--accent);
+.hero-heart {
+  font-size: 42px;
+  color: var(--pink-dark);
+  margin-bottom: 18px;
 }
 
-.small-title {
-  font-size: 12px;
-  letter-spacing: 5px;
-  font-weight: 600;
-  color: var(--subtext);
+.eyebrow,
+.section-label,
+.page-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--pink-dark);
 }
 
 .hero h1 {
   font-family: "Playfair Display", serif;
-  font-size: clamp(80px, 15vw, 150px);
-  line-height: 1;
+  font-size: clamp(55px, 9vw, 95px);
+  line-height: 0.98;
   font-weight: 600;
-  margin: 10px 0 20px;
+  margin: 18px 0 25px;
 }
 
-.hero-description {
-  color: var(--subtext);
+.hero-subtitle {
+  color: var(--text-light);
+  font-size: 14px;
   line-height: 1.8;
-  font-size: 15px;
 }
 
 
-/* CATEGORY */
+/* =========================
+   INTRO
+========================= */
 
-.category-container {
+.intro-section {
+  margin: 15px auto 55px;
+}
+
+.section-label {
+  margin-bottom: 13px;
+}
+
+.intro-box {
+  background: var(--white);
+  padding: 35px 40px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+}
+
+.intro-box h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.intro-box p {
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 750px;
+}
+
+.intro-box p + p {
+  margin-top: 8px;
+}
+
+
+/* =========================
+   YEARS
+========================= */
+
+.years-section {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.year-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 15px;
+}
+
+.current-year {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  font-weight: 600;
+}
+
+.year-arrow {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--pink-dark);
+  font-size: 18px;
+}
+
+.year-arrow.disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+
+/* =========================
+   YEAR CONTENT
+========================= */
+
+.year-content {
+  margin-top: 20px;
+}
+
+.year-title {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.year-title span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--pink-dark);
+}
+
+.year-title strong {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+}
+
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.category-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  max-width: 850px;
-  margin: auto;
 }
 
 .category-card {
-  text-align: left;
-  background: var(--white);
-  min-height: 250px;
+  min-height: 310px;
+  border-radius: 20px;
   padding: 30px;
   position: relative;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  transition: 0.25s ease;
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(130, 50, 75, 0.13);
 }
 
-.event-card {
-  background: #edf1f3;
+.project-card {
+  background: var(--pink);
+  color: white;
 }
 
 .message-card {
-  background: #f1eee8;
+  background: var(--white);
+  color: var(--text);
 }
 
-.category-number {
+.card-number {
   font-size: 12px;
   letter-spacing: 2px;
-  color: var(--subtext);
+  opacity: 0.75;
 }
 
-.category-info {
-  position: absolute;
-  bottom: 30px;
-}
-
-.category-label {
-  display: block;
-  font-size: 11px;
-  letter-spacing: 3px;
-  font-weight: 700;
-  color: var(--subtext);
-  margin-bottom: 8px;
-}
-
-.category-info h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 7px;
-}
-
-.category-info p {
-  color: var(--subtext);
-  font-size: 13px;
-}
-
-.arrow {
+.card-decoration {
   position: absolute;
   right: 30px;
-  top: 30px;
-  font-size: 22px;
+  top: 25px;
+  font-size: 28px;
+  opacity: 0.7;
 }
+
+.card-content {
+  position: absolute;
+  left: 30px;
+  bottom: 35px;
+}
+
+.card-content span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  opacity: 0.75;
+}
+
+.card-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin: 8px 0;
+}
+
+.card-content p {
+  max-width: 220px;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.card-arrow {
+  position: absolute;
+  right: 30px;
+  bottom: 33px;
+  font-size: 24px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   text-align: center;
-  color: #aaa;
-  font-size: 11px;
   margin-top: 70px;
+  color: var(--text-light);
+  font-size: 11px;
 }
 
 
@@ -172,163 +302,190 @@ footer {
   display: flex;
   align-items: center;
   gap: 25px;
-  padding: 20px 0 50px;
-}
-
-.subpage-header h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 45px;
+  padding: 20px 0 55px;
 }
 
 .back-button {
   background: transparent;
-  color: var(--subtext);
+  color: var(--text-light);
   font-size: 13px;
-  padding: 10px 0;
+}
+
+.subpage-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  margin-top: 5px;
 }
 
 
 /* =========================
-   EVENTS
+   PAGE INTRO
 ========================= */
 
-.event-list {
+.page-intro {
+  background: var(--white);
+  padding: 35px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+}
+
+.page-intro span,
+.message-header > span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: var(--pink-dark);
+}
+
+.page-intro h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 31px;
+  margin: 10px 0;
+}
+
+.page-intro p {
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+
+/* =========================
+   PROJECT
+========================= */
+
+.project-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.event-item {
+.project-item {
   background: white;
+  border-radius: 16px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
   border: 1px solid var(--line);
-  border-radius: 15px;
-  min-height: 130px;
-  display: flex;
-  align-items: center;
-  text-align: left;
-  padding: 15px;
-  position: relative;
-  transition: 0.2s;
 }
 
-.event-item:hover {
-  transform: translateX(5px);
-}
-
-.event-cover {
-  width: 150px;
-  height: 100px;
-  border-radius: 10px;
-  background: #d5dde3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 11px;
-  letter-spacing: 2px;
-  flex-shrink: 0;
-}
-
-.cover-two {
-  background: #d8d2c9;
-}
-
-.event-text {
-  margin-left: 25px;
-}
-
-.event-text h2 {
+.project-number {
   font-family: "Playfair Display", serif;
-  font-size: 25px;
-  margin-bottom: 5px;
+  font-size: 30px;
+  color: var(--pink);
+  width: 55px;
 }
 
-.event-text p {
-  color: var(--subtext);
+.project-info {
+  flex: 1;
+}
+
+.project-info span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--text-light);
+}
+
+.project-info h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  margin: 6px 0;
+}
+
+.project-info p {
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+.project-view {
+  background: var(--pink-pale);
+  color: var(--pink-dark);
+  padding: 11px 17px;
+  border-radius: 20px;
   font-size: 12px;
 }
 
 
 /* =========================
-   EVENT GALLERY
+   GALLERY
 ========================= */
 
-.event-gallery {
+.photo-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 15px;
 }
 
-.gallery-item {
+.gallery-image {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-.gallery-item:hover {
-  opacity: 0.85;
 }
 
 
 /* =========================
-   MESSAGE
+   MESSAGE PAGE
 ========================= */
 
-.message-intro {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 15px;
-  padding: 25px;
-  margin-bottom: 35px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.message-intro p {
-  color: var(--subtext);
-  font-size: 14px;
-}
-
-.post-button,
-.submit-button {
-  background: var(--text);
+.message-header {
+  background: var(--pink);
   color: white;
-  padding: 13px 22px;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
+  border-radius: 20px;
+  padding: 45px;
+  margin-bottom: 35px;
 }
 
-.post-button:hover,
-.submit-button:hover {
+.message-header > span {
+  color: white;
   opacity: 0.8;
 }
 
+.message-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  line-height: 1.05;
+  margin: 12px 0;
+}
 
-/* MESSAGE CARDS */
+.message-header p {
+  font-size: 13px;
+  opacity: 0.85;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.main-button {
+  background: white;
+  color: var(--pink-dark);
+  padding: 13px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+
+/* =========================
+   MESSAGE LIST
+========================= */
 
 .message-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 20px;
 }
 
 .message-card-item {
   background: white;
-  border: 1px solid var(--line);
   border-radius: 15px;
   overflow: hidden;
+  border: 1px solid var(--line);
 }
 
 .message-photo {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1;
   object-fit: cover;
   cursor: pointer;
 }
@@ -338,22 +495,22 @@ footer {
 }
 
 .message-name {
+  font-size: 13px;
   font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .message-text {
-  color: #666;
-  font-size: 13px;
+  font-size: 12px;
+  color: var(--text-light);
   line-height: 1.7;
   white-space: pre-wrap;
 }
 
 .message-date {
+  color: #b99aa4;
+  font-size: 9px;
   margin-top: 15px;
-  color: #aaa;
-  font-size: 10px;
 }
 
 
@@ -365,7 +522,7 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(20,20,20,0.45);
+  background: rgba(70, 25, 40, 0.5);
   z-index: 100;
   padding: 20px;
   overflow-y: auto;
@@ -373,49 +530,51 @@ footer {
 
 .modal.show {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .modal-box {
-  background: white;
   width: 100%;
   max-width: 500px;
-  padding: 35px;
+  background: white;
   border-radius: 20px;
+  padding: 35px;
   position: relative;
 }
 
 .modal-box h2 {
   font-family: "Playfair Display", serif;
-  font-size: 32px;
-  margin-bottom: 25px;
+  font-size: 30px;
+  margin: 10px 0 25px;
 }
 
 .close-button {
   position: absolute;
-  right: 25px;
-  top: 20px;
+  right: 22px;
+  top: 15px;
   background: transparent;
   font-size: 28px;
-  color: #888;
+  color: var(--text-light);
 }
 
 
-/* UPLOAD */
+/* =========================
+   UPLOAD
+========================= */
 
 .upload-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   aspect-ratio: 4 / 3;
-  border: 1.5px dashed #ccc;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 1.5px dashed var(--pink-light);
+  border-radius: 13px;
+  background: var(--pink-pale);
   cursor: pointer;
   overflow: hidden;
-  margin-bottom: 22px;
-  background: #fafafa;
+  margin-bottom: 20px;
 }
 
 .upload-box input {
@@ -424,22 +583,24 @@ footer {
 
 #uploadContent {
   text-align: center;
-  color: #888;
 }
 
 .upload-icon {
   font-size: 35px;
+  color: var(--pink);
   margin-bottom: 8px;
 }
 
 #uploadContent strong {
   display: block;
-  color: #555;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 #uploadContent span {
-  font-size: 11px;
+  display: block;
+  color: var(--text-light);
+  font-size: 10px;
+  margin-top: 5px;
 }
 
 .image-preview {
@@ -450,40 +611,48 @@ footer {
 }
 
 
-/* INPUT */
+/* =========================
+   FORM
+========================= */
 
 .input-label {
   display: block;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 17px;
 }
 
 .input-label input,
 .input-label textarea {
   display: block;
   width: 100%;
-  margin-top: 8px;
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 13px;
-  font-size: 13px;
+  margin-top: 7px;
   outline: none;
+  font-size: 13px;
+  color: var(--text);
 }
 
 .input-label textarea {
-  height: 120px;
+  height: 110px;
   resize: vertical;
 }
 
 .input-label input:focus,
 .input-label textarea:focus {
-  border-color: #999;
+  border-color: var(--pink);
 }
 
 .submit-button {
   width: 100%;
-  margin-top: 5px;
+  border-radius: 30px;
+  background: var(--pink-dark);
+  color: white;
+  padding: 14px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 
@@ -495,11 +664,11 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
   z-index: 200;
+  background: rgba(40, 15, 25, 0.92);
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 25px;
 }
 
 .image-viewer.show {
@@ -514,10 +683,10 @@ footer {
 
 .viewer-close {
   position: absolute;
-  right: 25px;
   top: 15px;
-  background: transparent;
+  right: 25px;
   color: white;
+  background: transparent;
   font-size: 35px;
 }
 
@@ -529,53 +698,98 @@ footer {
 @media (max-width: 700px) {
 
   .page {
-    padding: 20px 15px;
+    padding: 20px 15px 45px;
   }
 
   .hero {
-    padding-top: 50px;
+    padding-top: 45px;
   }
 
-  .category-container {
-    grid-template-columns: 1fr;
+  .hero h1 {
+    font-size: 57px;
+  }
+
+  .intro-box {
+    padding: 27px 22px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .category-card {
-    min-height: 210px;
+    min-height: 230px;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .card-content {
+    left: 20px;
+    bottom: 23px;
+  }
+
+  .card-content h2 {
+    font-size: 26px;
+  }
+
+  .card-content p {
+    font-size: 10px;
+    max-width: 120px;
+  }
+
+  .card-arrow {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .card-decoration {
+    right: 18px;
+    top: 18px;
   }
 
   .subpage-header {
-    padding-bottom: 30px;
+    padding-bottom: 35px;
   }
 
   .subpage-header h1 {
-    font-size: 34px;
+    font-size: 37px;
   }
 
-  .event-cover {
-    width: 100px;
-    height: 80px;
+  .project-item {
+    padding: 18px;
+    gap: 12px;
   }
 
-  .event-text {
-    margin-left: 15px;
+  .project-number {
+    width: 35px;
+    font-size: 23px;
   }
 
-  .event-text h2 {
-    font-size: 19px;
+  .project-info h2 {
+    font-size: 17px;
   }
 
-  .event-gallery {
+  .project-info p {
+    display: none;
+  }
+
+  .project-view {
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+
+  .photo-gallery {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
-  .message-intro {
-    flex-direction: column;
-    align-items: stretch;
+  .message-header {
+    padding: 30px 23px;
   }
 
-  .post-button {
-    width: 100%;
+  .message-header h2 {
+    font-size: 34px;
   }
 
   .message-list {
@@ -583,7 +797,7 @@ footer {
   }
 
   .modal-box {
-    padding: 25px 20px;
+    padding: 28px 20px;
   }
 
 }
