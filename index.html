@@ -83,9 +83,9 @@
   <div class="year-selector">
 
     <button
-      class="current-year"
-      onclick="toggleYear2026()"
-      aria-label="Open 2026"
+  class="current-year"
+  id="year2026Button"
+  aria-label="Open 2026"
     >
 
       <span class="year-decoration left">
@@ -625,6 +625,14 @@
 ```
 
   </div>
+
+  <script>
+  document.getElementById("year2026Button").addEventListener("click", function () {
+    const content = document.getElementById("year2026Content");
+
+    content.classList.toggle("show");
+  });
+</script>
 
   <script src="script.js"></script>
 
