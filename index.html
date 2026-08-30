@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Our Story — Sakuya</title>
+  <title>Memories Archived — Sakuya</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -26,7 +26,7 @@
   <div class="hero-heart">♡</div>
 
   <p class="eyebrow">
-    OUR STORY
+    MEMORIES ARCHIVED
   </p>
 
   <h1>
@@ -83,9 +83,9 @@
   <div class="year-selector">
 
     <button
-  class="current-year"
-  id="year2026Button"
-  aria-label="Open 2026"
+      class="current-year"
+      id="year2026Button"
+      aria-label="Open 2026"
     >
 
       <span class="year-decoration left">
@@ -171,7 +171,7 @@
     </button>
 
 
-    <!-- LỜI NHẮN -->
+    <!-- MESSAGE -->
 
     <button
       class="category-card message-card"
@@ -193,7 +193,7 @@
         </span>
 
         <h2>
-          LỜI NHẮN 
+          LỜI NHẮN
         </h2>
 
         <p>
@@ -207,7 +207,6 @@
       </div>
 
     </button>
-
 
   </div>
 
@@ -375,7 +374,6 @@
     </button>
 
   </article>
-
 
 </section>
 ```
@@ -625,13 +623,24 @@
 
   </div>
 
-  <script>
-  document.getElementById("year2026Button").addEventListener("click", function () {
-    const content = document.getElementById("year2026Content");
+  <!-- =========================
+       YEAR BUTTON
+  ========================== -->
 
-    content.classList.toggle("show");
-  });
-</script>
+  <script>
+    document
+      .getElementById("year2026Button")
+      .addEventListener("click", function () {
+
+        const content =
+          document.getElementById("year2026Content");
+
+        content.classList.toggle("show");
+
+      });
+  </script>
+
+  <!-- MAIN JAVASCRIPT -->
 
   <script src="script.js"></script>
 
