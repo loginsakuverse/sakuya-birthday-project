@@ -1316,74 +1316,123 @@ padding: 28px 20px;
 
 ```css
 /* =========================
-   MUSIC BUTTON
+   MUSIC BUTTON - HEART
+   TOP RIGHT - PC + MOBILE
 ========================= */
 
 .music-btn {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
+  position: fixed !important;
 
-  width: 48px;
-  height: 48px;
+  top: 20px !important;
+  right: 20px !important;
 
-  border: 1px solid rgba(196, 91, 122, 0.25);
-  border-radius: 50%;
+  bottom: auto !important;
+  left: auto !important;
 
-  background: rgba(255, 255, 255, 0.9);
+  width: 55px !important;
+  height: 50px !important;
 
-  color: var(--pink-dark);
-  font-size: 20px;
+  margin: 0 !important;
+  padding: 0 !important;
 
-  cursor: pointer;
+  border: none !important;
 
-  z-index: 9999;
+  /* HÌNH TRÁI TIM */
+  background: #ffffff !important;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  clip-path: polygon(
+    50% 100%,
+    8% 58%,
+    0% 38%,
+    2% 20%,
+    12% 7%,
+    27% 3%,
+    40% 8%,
+    50% 20%,
+    60% 8%,
+    73% 3%,
+    88% 7%,
+    98% 20%,
+    100% 38%,
+    92% 58%
+  );
 
-  box-shadow: 0 4px 15px rgba(130, 50, 75, 0.12);
+  color: var(--pink-dark) !important;
 
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+  font-size: 21px !important;
+  font-weight: bold !important;
+
+  cursor: pointer !important;
+
+  z-index: 99999 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding-bottom: 3px !important;
+
+  filter: drop-shadow(
+    0 3px 8px rgba(130, 50, 75, 0.15)
+  );
+
+  transition: transform 0.3s ease;
 }
+
+
+/* HOVER */
 
 .music-btn:hover {
   transform: scale(1.1);
 }
 
+
+/* ĐANG PHÁT */
+
 .music-btn.playing {
-  animation: musicSpin 3s linear infinite;
+  animation: musicHeartBeat 1.5s ease-in-out infinite;
 }
 
-@keyframes musicSpin {
-  from {
-    transform: rotate(0deg);
+
+@keyframes musicHeartBeat {
+
+  0% {
+    transform: scale(1);
   }
 
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(1.08);
   }
+
+  100% {
+    transform: scale(1);
+  }
+
 }
 
 
 /* =========================
-   MUSIC BUTTON - MOBILE
+   MOBILE
 ========================= */
 
 @media (max-width: 700px) {
 
   .music-btn {
-    right: 15px;
-    bottom: 15px;
 
-    width: 43px;
-    height: 43px;
+    top: 15px !important;
+    right: 15px !important;
 
-    font-size: 18px;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 48px !important;
+    height: 44px !important;
+
+    font-size: 18px !important;
+
   }
 
 }
 ```
+
+
