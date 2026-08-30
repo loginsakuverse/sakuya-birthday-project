@@ -8,7 +8,11 @@ function openPage(pageId) {
     page.classList.remove("active");
   });
 
-  document.getElementById(pageId).classList.add("active");
+  const page = document.getElementById(pageId);
+
+  if (page) {
+    page.classList.add("active");
+  }
 
   window.scrollTo({
     top: 0,
@@ -18,13 +22,14 @@ function openPage(pageId) {
 
 
 /* =========================
-   EVENT DATA
+   PROJECT DATA
 ========================= */
 
-const events = {
+const projects = {
 
-  event1: {
-    title: "Event Name",
+  project1: {
+    title: "Project Opening",
+
     images: [
       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205",
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
@@ -32,11 +37,24 @@ const events = {
     ]
   },
 
-  event2: {
-    title: "Event Name",
+
+  project2: {
+    title: "Project Stage 02",
+
     images: [
       "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4",
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30"
+    ]
+  },
+
+
+  project3: {
+    title: "Project Completed",
+
+    images: [
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7",
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063",
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205"
     ]
   }
 
@@ -44,36 +62,47 @@ const events = {
 
 
 /* =========================
-   OPEN EVENT
+   PROJECT GALLERY
 ========================= */
 
-function openEvent(eventId) {
+function openProjectGallery(projectId) {
 
-  const event = events[eventId];
+  const project = projects[projectId];
 
-  document.getElementById("eventTitle").textContent = event.title;
+  if (!project) return;
 
-  const gallery = document.getElementById("eventGallery");
+  document.getElementById("galleryTitle").textContent =
+    project.title;
+
+  const gallery =
+    document.getElementById("projectGallery");
 
   gallery.innerHTML = "";
 
-  event.images.forEach(image => {
 
-    const img = document.createElement("img");
+  project.images.forEach(imageUrl => {
 
-    img.src = image;
+    const img =
+      document.createElement("img");
 
-    img.className = "gallery-item";
+    img.src = imageUrl;
+
+    img.className = "gallery-image";
+
+    img.loading = "lazy";
 
     img.onclick = function() {
-      openImageViewer(image);
+
+      openImageViewer(imageUrl);
+
     };
 
     gallery.appendChild(img);
 
   });
 
-  openPage("eventDetailPage");
+
+  openPage("projectGalleryPage");
 }
 
 
@@ -81,16 +110,25 @@ function openEvent(eventId) {
    MESSAGE FORM
 ========================= */
 
+let selectedImage = null;
+
+
 function openMessageForm() {
 
-  document.getElementById("messageModal").classList.add("show");
+  document
+    .getElementById("messageModal")
+    .classList
+    .add("show");
 
 }
 
 
 function closeMessageForm() {
 
-  document.getElementById("messageModal").classList.remove("show");
+  document
+    .getElementById("messageModal")
+    .classList
+    .remove("show");
 
 }
 
@@ -99,29 +137,45 @@ function closeMessageForm() {
    IMAGE PREVIEW
 ========================= */
 
-let selectedImage = null;
-
 function previewImage(event) {
 
   const file = event.target.files[0];
 
   if (!file) return;
 
+
+  if (!file.type.startsWith("image/")) {
+
+    alert("Please choose an image.");
+
+    return;
+
+  }
+
+
   selectedImage = file;
 
-  const reader = new FileReader();
+
+  const reader =
+    new FileReader();
+
 
   reader.onload = function(e) {
 
-    const preview = document.getElementById("imagePreview");
+    const preview =
+      document.getElementById("imagePreview");
 
     preview.src = e.target.result;
 
     preview.style.display = "block";
 
-    document.getElementById("uploadContent").style.display = "none";
+
+    document
+      .getElementById("uploadContent")
+      .style.display = "none";
 
   };
+
 
   reader.readAsDataURL(file);
 
@@ -135,15 +189,22 @@ function previewImage(event) {
 function submitMessage() {
 
   const name =
-    document.getElementById("nameInput").value.trim();
+    document
+      .getElementById("nameInput")
+      .value
+      .trim();
+
 
   const message =
-    document.getElementById("messageInput").value.trim();
+    document
+      .getElementById("messageInput")
+      .value
+      .trim();
 
 
   if (!selectedImage) {
 
-    alert("Please choose a photo ♡");
+    alert("Please upload a photo ♡");
 
     return;
 
@@ -168,20 +229,13 @@ function submitMessage() {
   }
 
 
-  /*
-    TEMPORARY VERSION
+  const reader =
+    new FileReader();
 
-    Later this function will upload:
-    1. Image → Supabase Storage
-    2. Name + message + image URL → Supabase Database
-  */
-
-
-  const reader = new FileReader();
 
   reader.onload = function(e) {
 
-    const newMessage = {
+    const data = {
 
       name: name,
 
@@ -189,16 +243,19 @@ function submitMessage() {
 
       image: e.target.result,
 
-      date: new Date().toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit"
-      })
+      date: new Date().toLocaleDateString(
+        "en-GB",
+        {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric"
+        }
+      )
 
     };
 
 
-    addMessageToPage(newMessage);
+    addMessageToPage(data);
 
     closeMessageForm();
 
@@ -206,23 +263,28 @@ function submitMessage() {
 
   };
 
+
   reader.readAsDataURL(selectedImage);
 
 }
 
 
 /* =========================
-   ADD MESSAGE TO PAGE
+   ADD MESSAGE
 ========================= */
 
 function addMessageToPage(data) {
 
-  const list = document.getElementById("messageList");
+  const list =
+    document.getElementById("messageList");
 
 
-  const card = document.createElement("article");
+  const card =
+    document.createElement("article");
 
-  card.className = "message-card-item";
+
+  card.className =
+    "message-card-item";
 
 
   card.innerHTML = `
@@ -230,7 +292,7 @@ function addMessageToPage(data) {
     <img
       class="message-photo"
       src="${data.image}"
-      alt="Message photo"
+      alt="Memory photo"
     >
 
     <div class="message-content">
@@ -252,13 +314,13 @@ function addMessageToPage(data) {
   `;
 
 
-  const image = card.querySelector(".message-photo");
+  card
+    .querySelector(".message-photo")
+    .onclick = function() {
 
-  image.onclick = function() {
+      openImageViewer(data.image);
 
-    openImageViewer(data.image);
-
-  };
+    };
 
 
   list.prepend(card);
@@ -274,17 +336,35 @@ function resetForm() {
 
   selectedImage = null;
 
-  document.getElementById("photoInput").value = "";
 
-  document.getElementById("nameInput").value = "";
+  document.getElementById(
+    "photoInput"
+  ).value = "";
 
-  document.getElementById("messageInput").value = "";
 
-  document.getElementById("imagePreview").src = "";
+  document.getElementById(
+    "nameInput"
+  ).value = "";
 
-  document.getElementById("imagePreview").style.display = "none";
 
-  document.getElementById("uploadContent").style.display = "block";
+  document.getElementById(
+    "messageInput"
+  ).value = "";
+
+
+  document.getElementById(
+    "imagePreview"
+  ).src = "";
+
+
+  document.getElementById(
+    "imagePreview"
+  ).style.display = "none";
+
+
+  document.getElementById(
+    "uploadContent"
+  ).style.display = "block";
 
 }
 
@@ -295,27 +375,39 @@ function resetForm() {
 
 function openImageViewer(image) {
 
-  document.getElementById("viewerImage").src = image;
+  document.getElementById(
+    "viewerImage"
+  ).src = image;
 
-  document.getElementById("imageViewer").classList.add("show");
+
+  document.getElementById(
+    "imageViewer"
+  )
+  .classList
+  .add("show");
 
 }
 
 
 function closeImageViewer() {
 
-  document.getElementById("imageViewer").classList.remove("show");
+  document.getElementById(
+    "imageViewer"
+  )
+  .classList
+  .remove("show");
 
 }
 
 
 /* =========================
-   SECURITY
+   ESCAPE HTML
 ========================= */
 
 function escapeHTML(text) {
 
-  const div = document.createElement("div");
+  const div =
+    document.createElement("div");
 
   div.textContent = text;
 
