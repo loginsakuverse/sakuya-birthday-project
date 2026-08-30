@@ -22,6 +22,120 @@ function openPage(pageId) {
 
 
 /* =========================
+   BACKGROUND MUSIC
+========================= */
+
+const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+if (bgMusic && musicBtn) {
+
+  // Âm lượng mặc định 50%
+  bgMusic.volume = 0.5;
+
+
+  // Cập nhật icon và hiệu ứng nút
+  function updateMusicButton() {
+
+    if (bgMusic.paused) {
+
+      musicBtn.textContent = "🔇";
+      musicBtn.classList.remove("playing");
+
+    } else {
+
+      musicBtn.textContent = "♫";
+      musicBtn.classList.add("playing");
+
+    }
+
+  }
+
+
+  // Thử tự phát nhạc khi mở website
+  window.addEventListener("load", function () {
+
+    bgMusic
+      .play()
+      .then(function () {
+
+        updateMusicButton();
+
+      })
+      .catch(function () {
+
+        // Browser chặn autoplay.
+        // Nhạc sẽ được phát sau lần click đầu tiên.
+
+      });
+
+  });
+
+
+  // Nút bật / tắt nhạc
+  musicBtn.addEventListener("click", function (event) {
+
+    // Không để click nút nhạc kích hoạt
+    // các sự kiện click khác trên website
+    event.stopPropagation();
+
+
+    if (bgMusic.paused) {
+
+      bgMusic
+        .play()
+        .then(function () {
+
+          updateMusicButton();
+
+        })
+        .catch(function () {});
+
+    } else {
+
+      bgMusic.pause();
+
+      updateMusicButton();
+
+    }
+
+  });
+
+
+  // Nếu autoplay bị trình duyệt chặn,
+  // click bất kỳ đâu trên website sẽ phát nhạc.
+  function startMusicAfterInteraction() {
+
+    if (bgMusic.paused) {
+
+      bgMusic
+        .play()
+        .then(function () {
+
+          updateMusicButton();
+
+        })
+        .catch(function () {});
+
+    }
+
+    document.removeEventListener(
+      "click",
+      startMusicAfterInteraction
+    );
+
+  }
+
+
+  document.addEventListener(
+    "click",
+    startMusicAfterInteraction
+  );
+
+}
+
+
+/* =========================
    PROJECT DATA
 ========================= */
 
@@ -414,10 +528,24 @@ function escapeHTML(text) {
   return div.innerHTML;
 
 }
+
+
+/* =========================
+   YEAR 2026
+========================= */
+
 function toggleYear2026() {
-  const content = document.getElementById("year2026Content");
+
+  const content =
+    document.getElementById(
+      "year2026Content"
+    );
+
 
   if (content) {
+
     content.classList.toggle("show");
+
   }
+
 }
