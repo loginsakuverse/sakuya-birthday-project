@@ -414,3 +414,10 @@ function escapeHTML(text) {
   return div.innerHTML;
 
 }
+function toggleYear2026() {
+  const content = document.getElementById("year2026Content");
+
+  if (content) {
+    content.classList.toggle("show");
+  }
+}
