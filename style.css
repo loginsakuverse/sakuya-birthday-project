@@ -34,15 +34,98 @@ font-display: swap;
 --line: rgba(196, 91, 122, 0.18);
 }
 
+/* =========================
+GENERAL
+========================= */
+
 html {
 scroll-behavior: smooth;
+min-height: 100%;
 }
 
 body {
 font-family: "Montserrat Alternates", sans-serif;
-background: var(--pink-bg);
 color: var(--text);
 min-height: 100vh;
+
+/*
+Background màu dự phòng.
+Nếu ảnh chưa load, màu này sẽ được hiển thị.
+*/
+background: var(--pink-bg);
+
+overflow-x: hidden;
+}
+
+/* =========================
+FIXED BACKGROUND
+========================= */
+
+/*
+Background được đặt ở một layer riêng.
+
+Ảnh cần nằm tại:
+
+images/background.jpg
+
+Layer này sẽ đứng yên hoàn toàn
+khi người dùng scroll trang.
+*/
+
+body::before {
+content: "";
+
+position: fixed;
+
+top: 0;
+left: 0;
+
+width: 100vw;
+height: 100vh;
+
+background-image: url("./images/background.jpg");
+
+background-size: cover;
+
+background-position: center center;
+
+background-repeat: no-repeat;
+
+/*
+Đứng yên khi scroll.
+*/
+z-index: -2;
+
+pointer-events: none;
+}
+
+/*
+Lớp phủ nhẹ trên background.
+
+Có thể chỉnh độ trong suốt:
+
+0.05 = rất trong
+0.10 = nhẹ
+0.15 = vừa
+0.25 = mờ hơn
+*/
+
+body::after {
+content: "";
+
+position: fixed;
+
+top: 0;
+left: 0;
+
+width: 100vw;
+height: 100vh;
+
+background: rgba(255, 255, 255, 0);
+
+z-index: -1;
+
+pointer-events: none;
 }
 
 button,
@@ -62,10 +145,18 @@ GENERAL
 
 .page {
 display: none;
+
 min-height: 100vh;
+
 max-width: 1100px;
+
 margin: auto;
+
 padding: 35px 30px 60px;
+
+position: relative;
+
+z-index: 1;
 }
 
 .page.active {
@@ -78,12 +169,15 @@ HOME / HERO
 
 .hero {
 text-align: center;
+
 padding: 65px 20px 45px;
 }
 
 .hero-heart {
 font-size: 42px;
+
 color: var(--pink-dark);
+
 margin-bottom: 18px;
 }
 
@@ -91,22 +185,31 @@ margin-bottom: 18px;
 .section-label,
 .page-eyebrow {
 font-size: 11px;
+
 font-weight: 700;
+
 letter-spacing: 4px;
+
 color: var(--pink-dark);
 }
 
 .hero h1 {
 font-family: "Pretty On The Inside", cursive;
+
 font-size: clamp(55px, 9vw, 95px);
+
 line-height: 0.98;
+
 font-weight: normal;
+
 margin: 18px 0 25px;
 }
 
 .hero-subtitle {
 color: var(--text-light);
+
 font-size: 14px;
+
 line-height: 1.8;
 }
 
@@ -123,22 +226,37 @@ margin-bottom: 13px;
 }
 
 .intro-box {
-background: var(--white);
+background: rgba(255, 255, 255, 0.92);
+
 padding: 35px 40px;
+
 border-radius: 18px;
+
 border: 1px solid var(--line);
+
+/*
+Làm background phía sau hơi mềm.
+*/
+backdrop-filter: blur(4px);
+
+-webkit-backdrop-filter: blur(4px);
 }
 
 .intro-box h2 {
 font-size: 28px;
+
 font-weight: 700;
+
 margin-bottom: 15px;
 }
 
 .intro-box p {
 color: var(--text-light);
+
 font-size: 14px;
+
 line-height: 1.8;
+
 max-width: 750px;
 }
 
@@ -152,13 +270,17 @@ YEARS
 
 .years-section {
 text-align: center;
+
 margin-bottom: 45px;
 }
 
 .year-selector {
 display: flex;
+
 align-items: center;
+
 justify-content: center;
+
 margin-top: 18px;
 }
 
@@ -166,10 +288,13 @@ margin-top: 18px;
 position: relative;
 
 display: inline-flex;
+
 align-items: center;
+
 justify-content: center;
 
 border: none;
+
 background: transparent;
 
 padding: 8px 55px;
@@ -185,8 +310,11 @@ color 0.3s ease;
 
 .year-number {
 font-family: "Pretty On The Inside", cursive;
+
 font-size: 64px;
+
 font-weight: normal;
+
 line-height: 1;
 }
 
@@ -194,6 +322,7 @@ line-height: 1;
 position: absolute;
 
 font-family: "Pretty On The Inside", cursive;
+
 font-size: 25px;
 
 opacity: 0;
@@ -205,26 +334,31 @@ transform 0.35s ease;
 
 .year-decoration.left {
 left: 5px;
+
 transform: translateX(14px) rotate(-12deg);
 }
 
 .year-decoration.right {
 right: 5px;
+
 transform: translateX(-14px) rotate(12deg);
 }
 
 .current-year:hover {
 color: var(--pink-dark);
+
 transform: scale(1.04);
 }
 
 .current-year:hover .year-decoration.left {
 opacity: 1;
+
 transform: translateX(0) rotate(-12deg);
 }
 
 .current-year:hover .year-decoration.right {
 opacity: 1;
+
 transform: translateX(0) rotate(12deg);
 }
 
@@ -238,36 +372,51 @@ display: none;
 
 .year-content.show {
 display: block;
+
 animation: yearReveal 0.55s ease forwards;
 }
 
 @keyframes yearReveal {
 from {
 opacity: 0;
+
+```
 transform: translateY(18px);
+```
+
 }
 
 to {
 opacity: 1;
+
+```
 transform: translateY(0);
+```
+
 }
 }
 
 .year-title {
 margin-bottom: 18px;
+
 display: flex;
+
 align-items: baseline;
+
 gap: 10px;
 }
 
 .year-title span {
 font-size: 10px;
+
 letter-spacing: 3px;
+
 color: var(--pink-dark);
 }
 
 .year-title strong {
 font-size: 25px;
+
 font-weight: 700;
 }
 
@@ -277,19 +426,25 @@ CATEGORY CARDS
 
 .category-grid {
 display: grid;
+
 grid-template-columns: repeat(2, minmax(0, 1fr));
+
 gap: 20px;
 }
 
 .category-card {
 min-height: 310px;
+
 width: 100%;
 
 border-radius: 20px;
+
 padding: 30px;
 
 position: relative;
+
 text-align: left;
+
 overflow: hidden;
 
 transition:
@@ -299,63 +454,85 @@ box-shadow 0.25s ease;
 
 .category-card:hover {
 transform: translateY(-6px);
+
 box-shadow: 0 18px 35px rgba(130, 50, 75, 0.13);
 }
 
 .project-card {
 background: var(--pink);
+
 color: white;
 }
 
 .message-card {
-background: var(--white);
+background: rgba(255, 255, 255, 0.94);
+
 color: var(--text);
 }
 
 .card-number {
 font-size: 12px;
+
 letter-spacing: 2px;
+
 opacity: 0.75;
 }
 
 .card-decoration {
 position: absolute;
+
 right: 30px;
+
 top: 25px;
+
 font-size: 28px;
+
 opacity: 0.7;
 }
 
 .card-content {
 position: absolute;
+
 left: 30px;
+
 bottom: 35px;
 }
 
 .card-content span {
 font-size: 10px;
+
 letter-spacing: 3px;
+
 font-weight: 700;
+
 opacity: 0.75;
 }
 
 .card-content h2 {
 font-size: 42px;
+
 font-weight: 700;
+
 margin: 8px 0;
 }
 
 .card-content p {
 max-width: 220px;
+
 font-size: 13px;
+
 line-height: 1.6;
+
 opacity: 0.8;
 }
 
 .card-arrow {
 position: absolute;
+
 right: 30px;
+
 bottom: 33px;
+
 font-size: 24px;
 }
 
@@ -365,8 +542,11 @@ FOOTER
 
 footer {
 text-align: center;
+
 margin-top: 70px;
+
 color: var(--text-light);
+
 font-size: 11px;
 }
 
@@ -376,20 +556,27 @@ SUBPAGE
 
 .subpage-header {
 display: flex;
+
 align-items: center;
+
 gap: 25px;
+
 padding: 20px 0 55px;
 }
 
 .back-button {
 background: transparent;
+
 color: var(--text-light);
+
 font-size: 13px;
 }
 
 .subpage-header h1 {
 font-size: 48px;
+
 font-weight: 700;
+
 margin-top: 5px;
 }
 
@@ -398,28 +585,41 @@ PAGE INTRO
 ========================= */
 
 .page-intro {
-background: var(--white);
+background: rgba(255, 255, 255, 0.92);
+
 padding: 35px;
+
 border-radius: 18px;
+
 margin-bottom: 30px;
+
+backdrop-filter: blur(4px);
+
+-webkit-backdrop-filter: blur(4px);
 }
 
 .page-intro span,
 .message-header > span {
 font-size: 10px;
+
 letter-spacing: 3px;
+
 font-weight: 700;
+
 color: var(--pink-dark);
 }
 
 .page-intro h2 {
 font-size: 31px;
+
 font-weight: 700;
+
 margin: 10px 0;
 }
 
 .page-intro p {
 color: var(--text-light);
+
 font-size: 13px;
 }
 
@@ -429,26 +629,39 @@ PROJECT
 
 .project-list {
 display: flex;
+
 flex-direction: column;
+
 gap: 15px;
 }
 
 .project-item {
-background: white;
+background: rgba(255, 255, 255, 0.94);
+
 border-radius: 16px;
+
 padding: 25px;
 
 display: flex;
+
 align-items: center;
+
 gap: 25px;
 
 border: 1px solid var(--line);
+
+backdrop-filter: blur(4px);
+
+-webkit-backdrop-filter: blur(4px);
 }
 
 .project-number {
 font-size: 30px;
+
 font-weight: 700;
+
 color: var(--pink);
+
 width: 55px;
 }
 
@@ -458,26 +671,33 @@ flex: 1;
 
 .project-info span {
 font-size: 10px;
+
 letter-spacing: 2px;
+
 color: var(--text-light);
 }
 
 .project-info h2 {
 font-size: 23px;
+
 font-weight: 700;
+
 margin: 6px 0;
 }
 
 .project-info p {
 color: var(--text-light);
+
 font-size: 12px;
 }
 
 .project-view {
 background: var(--pink-pale);
+
 color: var(--pink-dark);
 
 padding: 11px 17px;
+
 border-radius: 20px;
 
 font-size: 12px;
@@ -489,15 +709,21 @@ GALLERY
 
 .photo-gallery {
 display: grid;
+
 grid-template-columns: repeat(3, 1fr);
+
 gap: 15px;
 }
 
 .gallery-image {
 width: 100%;
+
 aspect-ratio: 1;
+
 object-fit: cover;
+
 border-radius: 12px;
+
 cursor: pointer;
 }
 
@@ -507,9 +733,11 @@ MESSAGE PAGE
 
 .message-header {
 background: var(--pink);
+
 color: white;
 
 border-radius: 20px;
+
 padding: 45px;
 
 margin-bottom: 35px;
@@ -517,31 +745,41 @@ margin-bottom: 35px;
 
 .message-header > span {
 color: white;
+
 opacity: 0.8;
 }
 
 .message-header h2 {
 font-size: 42px;
+
 font-weight: 700;
+
 line-height: 1.05;
+
 margin: 12px 0;
 }
 
 .message-header p {
 font-size: 13px;
+
 opacity: 0.85;
+
 line-height: 1.7;
+
 margin-bottom: 25px;
 }
 
 .main-button {
 background: white;
+
 color: var(--pink-dark);
 
 padding: 13px 22px;
+
 border-radius: 30px;
 
 font-weight: 700;
+
 font-size: 12px;
 }
 
@@ -551,21 +789,29 @@ MESSAGE LIST
 
 .message-list {
 display: grid;
+
 grid-template-columns: repeat(3, 1fr);
+
 gap: 20px;
 }
 
 .message-card-item {
-background: white;
+background: rgba(255, 255, 255, 0.94);
+
 border-radius: 15px;
+
 overflow: hidden;
+
 border: 1px solid var(--line);
 }
 
 .message-photo {
 width: 100%;
+
 aspect-ratio: 1;
+
 object-fit: cover;
+
 cursor: pointer;
 }
 
@@ -575,20 +821,27 @@ padding: 18px;
 
 .message-name {
 font-size: 13px;
+
 font-weight: 700;
+
 margin-bottom: 8px;
 }
 
 .message-text {
 font-size: 12px;
+
 color: var(--text-light);
+
 line-height: 1.7;
+
 white-space: pre-wrap;
 }
 
 .message-date {
 color: #b99aa4;
+
 font-size: 9px;
+
 margin-top: 15px;
 }
 
@@ -600,6 +853,7 @@ MODAL
 display: none;
 
 position: fixed;
+
 inset: 0;
 
 background: rgba(70, 25, 40, 0.5);
@@ -607,21 +861,27 @@ background: rgba(70, 25, 40, 0.5);
 z-index: 100;
 
 padding: 20px;
+
 overflow-y: auto;
 }
 
 .modal.show {
 display: flex;
+
 align-items: center;
+
 justify-content: center;
 }
 
 .modal-box {
 width: 100%;
+
 max-width: 500px;
 
 background: white;
+
 border-radius: 20px;
+
 padding: 35px;
 
 position: relative;
@@ -629,18 +889,23 @@ position: relative;
 
 .modal-box h2 {
 font-size: 30px;
+
 font-weight: 700;
+
 margin: 10px 0 25px;
 }
 
 .close-button {
 position: absolute;
+
 right: 22px;
+
 top: 15px;
 
 background: transparent;
 
 font-size: 28px;
+
 color: var(--text-light);
 }
 
@@ -650,18 +915,23 @@ UPLOAD
 
 .upload-box {
 display: flex;
+
 justify-content: center;
+
 align-items: center;
 
 width: 100%;
+
 aspect-ratio: 4 / 3;
 
 border: 1.5px dashed var(--pink-light);
+
 border-radius: 13px;
 
 background: var(--pink-pale);
 
 cursor: pointer;
+
 overflow: hidden;
 
 margin-bottom: 20px;
@@ -677,19 +947,25 @@ text-align: center;
 
 .upload-icon {
 font-size: 35px;
+
 color: var(--pink);
+
 margin-bottom: 8px;
 }
 
 #uploadContent strong {
 display: block;
+
 font-size: 13px;
 }
 
 #uploadContent span {
 display: block;
+
 color: var(--text-light);
+
 font-size: 10px;
+
 margin-top: 5px;
 }
 
@@ -697,6 +973,7 @@ margin-top: 5px;
 display: none;
 
 width: 100%;
+
 height: 100%;
 
 object-fit: cover;
@@ -710,6 +987,7 @@ FORM
 display: block;
 
 font-size: 11px;
+
 font-weight: 700;
 
 margin-bottom: 17px;
@@ -722,19 +1000,23 @@ display: block;
 width: 100%;
 
 border: 1px solid var(--line);
+
 border-radius: 10px;
 
 padding: 13px;
+
 margin-top: 7px;
 
 outline: none;
 
 font-size: 13px;
+
 color: var(--text);
 }
 
 .input-label textarea {
 height: 110px;
+
 resize: vertical;
 }
 
@@ -749,11 +1031,13 @@ width: 100%;
 border-radius: 30px;
 
 background: var(--pink-dark);
+
 color: white;
 
 padding: 14px;
 
 font-size: 12px;
+
 font-weight: 700;
 }
 
@@ -765,6 +1049,7 @@ IMAGE VIEWER
 display: none;
 
 position: fixed;
+
 inset: 0;
 
 z-index: 200;
@@ -772,6 +1057,7 @@ z-index: 200;
 background: rgba(40, 15, 25, 0.92);
 
 align-items: center;
+
 justify-content: center;
 
 padding: 25px;
@@ -783,6 +1069,7 @@ display: flex;
 
 .image-viewer img {
 max-width: 95%;
+
 max-height: 90vh;
 
 object-fit: contain;
@@ -792,9 +1079,11 @@ object-fit: contain;
 position: absolute;
 
 top: 15px;
+
 right: 25px;
 
 color: white;
+
 background: transparent;
 
 font-size: 35px;
@@ -808,6 +1097,23 @@ MOBILE
 
 .page {
 padding: 20px 15px 45px;
+}
+
+/*
+Background vẫn đứng yên trên mobile.
+*/
+
+body::before {
+width: 100vw;
+
+```
+height: 100vh;
+
+background-size: cover;
+
+background-position: center center;
+```
+
 }
 
 .hero {
@@ -836,18 +1142,31 @@ padding: 8px 45px;
 
 .category-grid {
 grid-template-columns: repeat(2, minmax(0, 1fr));
+
+```
 gap: 10px;
+```
+
 }
 
 .category-card {
 min-height: 230px;
+
+```
 padding: 20px;
+
 border-radius: 15px;
+```
+
 }
 
 .card-content {
 left: 20px;
+
+```
 bottom: 23px;
+```
+
 }
 
 .card-content h2 {
@@ -856,17 +1175,29 @@ font-size: 26px;
 
 .card-content p {
 font-size: 10px;
+
+```
 max-width: 120px;
+```
+
 }
 
 .card-arrow {
 right: 20px;
+
+```
 bottom: 20px;
+```
+
 }
 
 .card-decoration {
 right: 18px;
+
+```
 top: 18px;
+```
+
 }
 
 .subpage-header {
@@ -879,12 +1210,20 @@ font-size: 37px;
 
 .project-item {
 padding: 18px;
+
+```
 gap: 12px;
+```
+
 }
 
 .project-number {
 width: 35px;
+
+```
 font-size: 23px;
+```
+
 }
 
 .project-info h2 {
@@ -897,12 +1236,20 @@ display: none;
 
 .project-view {
 padding: 9px 12px;
+
+```
 font-size: 10px;
+```
+
 }
 
 .photo-gallery {
 grid-template-columns: repeat(2, 1fr);
+
+```
 gap: 8px;
+```
+
 }
 
 .message-header {
@@ -920,4 +1267,5 @@ grid-template-columns: 1fr;
 .modal-box {
 padding: 28px 20px;
 }
+
 }
