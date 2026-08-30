@@ -1,827 +1,923 @@
 @font-face {
-  font-family: "Pretty On The Inside";
-  src: url("./fonts/fonts/poti.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+font-family: "Pretty On The Inside";
+src: url("./fonts/fonts/poti.ttf") format("truetype");
+font-weight: normal;
+font-style: normal;
+font-display: swap;
 }
 
 @font-face {
-  font-family: "Montserrat Alternates";
-  src: url("./fonts/fonts/MontserratAlternates-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+font-family: "Montserrat Alternates";
+src: url("./fonts/fonts/MontserratAlternates-Regular.otf") format("opentype");
+font-weight: 400;
+font-style: normal;
+font-display: swap;
 }
-
-
-/* =========================
-   RESET
-========================= */
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+  }
 
 :root {
-  --pink-dark: #c45b7a;
-  --pink: #e58ba5;
-  --pink-light: #f7cbd8;
-  --pink-pale: #fdebf1;
-  --pink-bg: #f8dce5;
+--pink-dark: #c45b7a;
+--pink: #e58ba5;
+--pink-light: #f7cbd8;
+--pink-pale: #fdebf1;
+--pink-bg: #f8dce5;
 
-  --white: #ffffff;
+--white: #ffffff;
 
-  --text: #552b38;
-  --text-light: #966978;
-  --line: rgba(196, 91, 122, 0.18);
+--text: #552b38;
+--text-light: #966978;
+--line: rgba(196, 91, 122, 0.18);
 }
 
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Montserrat Alternates", sans-serif;
-  background: var(--pink-bg);
-  color: var(--text);
-  min-height: 100vh;
+font-family: "Montserrat Alternates", sans-serif;
+background: var(--pink-bg);
+color: var(--text);
+min-height: 100vh;
 }
-
-
-/* =========================
-   FONT INHERIT
-========================= */
 
 button,
 input,
 textarea {
-  font-family: inherit;
+font-family: inherit;
 }
-
-
-/* =========================
-   GENERAL
-========================= */
 
 button {
-  border: none;
-  cursor: pointer;
+border: none;
+cursor: pointer;
 }
 
+/* =========================
+GENERAL
+========================= */
+
 .page {
-  display: none;
-  min-height: 100vh;
-  max-width: 1100px;
-  margin: auto;
-  padding: 35px 30px 60px;
+display: none;
+min-height: 100vh;
+max-width: 1100px;
+margin: auto;
+padding: 35px 30px 60px;
 }
 
 .page.active {
-  display: block;
+display: block;
 }
 
-
 /* =========================
-   HOME / HERO
+HOME / HERO
 ========================= */
 
 .hero {
-  text-align: center;
-  padding: 65px 20px 45px;
+text-align: center;
+padding: 65px 20px 45px;
 }
 
 .hero-heart {
-  font-size: 42px;
-  color: var(--pink-dark);
-  margin-bottom: 18px;
+font-size: 42px;
+color: var(--pink-dark);
+margin-bottom: 18px;
 }
 
 .eyebrow,
 .section-label,
 .page-eyebrow {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  color: var(--pink-dark);
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 4px;
+color: var(--pink-dark);
 }
 
 .hero h1 {
-  font-family: "Pretty On The Inside", cursive;
-  font-size: clamp(55px, 9vw, 95px);
-  line-height: 0.98;
-  font-weight: normal;
-  margin: 18px 0 25px;
+font-family: "Pretty On The Inside", cursive;
+font-size: clamp(55px, 9vw, 95px);
+line-height: 0.98;
+font-weight: normal;
+margin: 18px 0 25px;
 }
 
 .hero-subtitle {
-  color: var(--text-light);
-  font-size: 14px;
-  line-height: 1.8;
+color: var(--text-light);
+font-size: 14px;
+line-height: 1.8;
 }
 
-
 /* =========================
-   INTRO
+INTRO
 ========================= */
 
 .intro-section {
-  margin: 15px auto 55px;
+margin: 15px auto 55px;
 }
 
 .section-label {
-  margin-bottom: 13px;
+margin-bottom: 13px;
 }
 
 .intro-box {
-  background: var(--white);
-  padding: 35px 40px;
-  border-radius: 18px;
-  border: 1px solid var(--line);
+background: var(--white);
+padding: 35px 40px;
+border-radius: 18px;
+border: 1px solid var(--line);
 }
 
 .intro-box h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 15px;
+font-size: 28px;
+font-weight: 700;
+margin-bottom: 15px;
 }
 
 .intro-box p {
-  color: var(--text-light);
-  font-size: 14px;
-  line-height: 1.8;
-  max-width: 750px;
+color: var(--text-light);
+font-size: 14px;
+line-height: 1.8;
+max-width: 750px;
 }
 
 .intro-box p + p {
-  margin-top: 8px;
+margin-top: 8px;
 }
 
-
 /* =========================
-   YEARS
+YEARS
 ========================= */
 
 .years-section {
-  text-align: center;
-  margin-bottom: 45px;
+text-align: center;
+margin-bottom: 45px;
 }
 
 .year-selector {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 35px;
-  margin-top: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 18px;
 }
 
 .current-year {
-  font-size: 52px;
-  font-weight: 700;
+position: relative;
+
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+border: none;
+background: transparent;
+
+padding: 8px 55px;
+
+color: var(--text);
+
+cursor: pointer;
+
+transition:
+transform 0.3s ease,
+color 0.3s ease;
 }
 
-.year-arrow {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--pink-dark);
-  font-size: 18px;
+.year-number {
+font-family: "Pretty On The Inside", cursive;
+font-size: 64px;
+font-weight: normal;
+line-height: 1;
 }
 
-.year-arrow.disabled {
-  opacity: 0.35;
-  cursor: default;
+.year-decoration {
+position: absolute;
+
+font-family: "Pretty On The Inside", cursive;
+font-size: 25px;
+
+opacity: 0;
+
+transition:
+opacity 0.3s ease,
+transform 0.35s ease;
 }
 
+.year-decoration.left {
+left: 5px;
+transform: translateX(14px) rotate(-12deg);
+}
+
+.year-decoration.right {
+right: 5px;
+transform: translateX(-14px) rotate(12deg);
+}
+
+.current-year:hover {
+color: var(--pink-dark);
+transform: scale(1.04);
+}
+
+.current-year:hover .year-decoration.left {
+opacity: 1;
+transform: translateX(0) rotate(-12deg);
+}
+
+.current-year:hover .year-decoration.right {
+opacity: 1;
+transform: translateX(0) rotate(12deg);
+}
 
 /* =========================
-   YEAR CONTENT
+YEAR CONTENT
 ========================= */
 
 .year-content {
-  margin-top: 20px;
+display: none;
+}
+
+.year-content.show {
+display: block;
+animation: yearReveal 0.55s ease forwards;
+}
+
+@keyframes yearReveal {
+from {
+opacity: 0;
+transform: translateY(18px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
 }
 
 .year-title {
-  margin-bottom: 18px;
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
+margin-bottom: 18px;
+display: flex;
+align-items: baseline;
+gap: 10px;
 }
 
 .year-title span {
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--pink-dark);
+font-size: 10px;
+letter-spacing: 3px;
+color: var(--pink-dark);
 }
 
 .year-title strong {
-  font-size: 25px;
-  font-weight: 700;
+font-size: 25px;
+font-weight: 700;
 }
 
-
 /* =========================
-   CATEGORY CARDS
+CATEGORY CARDS
 ========================= */
 
 .category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 20px;
 }
 
 .category-card {
-  min-height: 310px;
-  border-radius: 20px;
-  padding: 30px;
-  position: relative;
-  text-align: left;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+min-height: 310px;
+width: 100%;
+
+border-radius: 20px;
+padding: 30px;
+
+position: relative;
+text-align: left;
+overflow: hidden;
+
+transition:
+transform 0.25s ease,
+box-shadow 0.25s ease;
 }
 
 .category-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(130, 50, 75, 0.13);
+transform: translateY(-6px);
+box-shadow: 0 18px 35px rgba(130, 50, 75, 0.13);
 }
 
 .project-card {
-  background: var(--pink);
-  color: white;
+background: var(--pink);
+color: white;
 }
 
 .message-card {
-  background: var(--white);
-  color: var(--text);
+background: var(--white);
+color: var(--text);
 }
 
 .card-number {
-  font-size: 12px;
-  letter-spacing: 2px;
-  opacity: 0.75;
+font-size: 12px;
+letter-spacing: 2px;
+opacity: 0.75;
 }
 
 .card-decoration {
-  position: absolute;
-  right: 30px;
-  top: 25px;
-  font-size: 28px;
-  opacity: 0.7;
+position: absolute;
+right: 30px;
+top: 25px;
+font-size: 28px;
+opacity: 0.7;
 }
 
 .card-content {
-  position: absolute;
-  left: 30px;
-  bottom: 35px;
+position: absolute;
+left: 30px;
+bottom: 35px;
 }
 
 .card-content span {
-  font-size: 10px;
-  letter-spacing: 3px;
-  font-weight: 700;
-  opacity: 0.75;
+font-size: 10px;
+letter-spacing: 3px;
+font-weight: 700;
+opacity: 0.75;
 }
 
 .card-content h2 {
-  font-size: 42px;
-  font-weight: 700;
-  margin: 8px 0;
+font-size: 42px;
+font-weight: 700;
+margin: 8px 0;
 }
 
 .card-content p {
-  max-width: 220px;
-  font-size: 13px;
-  line-height: 1.6;
-  opacity: 0.8;
+max-width: 220px;
+font-size: 13px;
+line-height: 1.6;
+opacity: 0.8;
 }
 
 .card-arrow {
-  position: absolute;
-  right: 30px;
-  bottom: 33px;
-  font-size: 24px;
+position: absolute;
+right: 30px;
+bottom: 33px;
+font-size: 24px;
 }
 
-
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer {
-  text-align: center;
-  margin-top: 70px;
-  color: var(--text-light);
-  font-size: 11px;
+text-align: center;
+margin-top: 70px;
+color: var(--text-light);
+font-size: 11px;
 }
 
-
 /* =========================
-   SUBPAGE
+SUBPAGE
 ========================= */
 
 .subpage-header {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  padding: 20px 0 55px;
+display: flex;
+align-items: center;
+gap: 25px;
+padding: 20px 0 55px;
 }
 
 .back-button {
-  background: transparent;
-  color: var(--text-light);
-  font-size: 13px;
+background: transparent;
+color: var(--text-light);
+font-size: 13px;
 }
 
 .subpage-header h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-top: 5px;
+font-size: 48px;
+font-weight: 700;
+margin-top: 5px;
 }
 
-
 /* =========================
-   PAGE INTRO
+PAGE INTRO
 ========================= */
 
 .page-intro {
-  background: var(--white);
-  padding: 35px;
-  border-radius: 18px;
-  margin-bottom: 30px;
+background: var(--white);
+padding: 35px;
+border-radius: 18px;
+margin-bottom: 30px;
 }
 
 .page-intro span,
 .message-header > span {
-  font-size: 10px;
-  letter-spacing: 3px;
-  font-weight: 700;
-  color: var(--pink-dark);
+font-size: 10px;
+letter-spacing: 3px;
+font-weight: 700;
+color: var(--pink-dark);
 }
 
 .page-intro h2 {
-  font-size: 31px;
-  font-weight: 700;
-  margin: 10px 0;
+font-size: 31px;
+font-weight: 700;
+margin: 10px 0;
 }
 
 .page-intro p {
-  color: var(--text-light);
-  font-size: 13px;
+color: var(--text-light);
+font-size: 13px;
 }
 
-
 /* =========================
-   PROJECT
+PROJECT
 ========================= */
 
 .project-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+display: flex;
+flex-direction: column;
+gap: 15px;
 }
 
 .project-item {
-  background: white;
-  border-radius: 16px;
-  padding: 25px;
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  border: 1px solid var(--line);
+background: white;
+border-radius: 16px;
+padding: 25px;
+
+display: flex;
+align-items: center;
+gap: 25px;
+
+border: 1px solid var(--line);
 }
 
 .project-number {
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--pink);
-  width: 55px;
+font-size: 30px;
+font-weight: 700;
+color: var(--pink);
+width: 55px;
 }
 
 .project-info {
-  flex: 1;
+flex: 1;
 }
 
 .project-info span {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--text-light);
+font-size: 10px;
+letter-spacing: 2px;
+color: var(--text-light);
 }
 
 .project-info h2 {
-  font-size: 23px;
-  font-weight: 700;
-  margin: 6px 0;
+font-size: 23px;
+font-weight: 700;
+margin: 6px 0;
 }
 
 .project-info p {
-  color: var(--text-light);
-  font-size: 12px;
+color: var(--text-light);
+font-size: 12px;
 }
 
 .project-view {
-  background: var(--pink-pale);
-  color: var(--pink-dark);
-  padding: 11px 17px;
-  border-radius: 20px;
-  font-size: 12px;
+background: var(--pink-pale);
+color: var(--pink-dark);
+
+padding: 11px 17px;
+border-radius: 20px;
+
+font-size: 12px;
 }
 
-
 /* =========================
-   GALLERY
+GALLERY
 ========================= */
 
 .photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
 }
 
 .gallery-image {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 12px;
-  cursor: pointer;
+width: 100%;
+aspect-ratio: 1;
+object-fit: cover;
+border-radius: 12px;
+cursor: pointer;
 }
 
-
 /* =========================
-   MESSAGE PAGE
+MESSAGE PAGE
 ========================= */
 
 .message-header {
-  background: var(--pink);
-  color: white;
-  border-radius: 20px;
-  padding: 45px;
-  margin-bottom: 35px;
+background: var(--pink);
+color: white;
+
+border-radius: 20px;
+padding: 45px;
+
+margin-bottom: 35px;
 }
 
 .message-header > span {
-  color: white;
-  opacity: 0.8;
+color: white;
+opacity: 0.8;
 }
 
 .message-header h2 {
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.05;
-  margin: 12px 0;
+font-size: 42px;
+font-weight: 700;
+line-height: 1.05;
+margin: 12px 0;
 }
 
 .message-header p {
-  font-size: 13px;
-  opacity: 0.85;
-  line-height: 1.7;
-  margin-bottom: 25px;
+font-size: 13px;
+opacity: 0.85;
+line-height: 1.7;
+margin-bottom: 25px;
 }
 
 .main-button {
-  background: white;
-  color: var(--pink-dark);
-  padding: 13px 22px;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 12px;
+background: white;
+color: var(--pink-dark);
+
+padding: 13px 22px;
+border-radius: 30px;
+
+font-weight: 700;
+font-size: 12px;
 }
 
-
 /* =========================
-   MESSAGE LIST
+MESSAGE LIST
 ========================= */
 
 .message-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
 }
 
 .message-card-item {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  border: 1px solid var(--line);
+background: white;
+border-radius: 15px;
+overflow: hidden;
+border: 1px solid var(--line);
 }
 
 .message-photo {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  cursor: pointer;
+width: 100%;
+aspect-ratio: 1;
+object-fit: cover;
+cursor: pointer;
 }
 
 .message-content {
-  padding: 18px;
+padding: 18px;
 }
 
 .message-name {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 8px;
+font-size: 13px;
+font-weight: 700;
+margin-bottom: 8px;
 }
 
 .message-text {
-  font-size: 12px;
-  color: var(--text-light);
-  line-height: 1.7;
-  white-space: pre-wrap;
+font-size: 12px;
+color: var(--text-light);
+line-height: 1.7;
+white-space: pre-wrap;
 }
 
 .message-date {
-  color: #b99aa4;
-  font-size: 9px;
-  margin-top: 15px;
+color: #b99aa4;
+font-size: 9px;
+margin-top: 15px;
 }
 
-
 /* =========================
-   MODAL
+MODAL
 ========================= */
 
 .modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(70, 25, 40, 0.5);
-  z-index: 100;
-  padding: 20px;
-  overflow-y: auto;
+display: none;
+
+position: fixed;
+inset: 0;
+
+background: rgba(70, 25, 40, 0.5);
+
+z-index: 100;
+
+padding: 20px;
+overflow-y: auto;
 }
 
 .modal.show {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .modal-box {
-  width: 100%;
-  max-width: 500px;
-  background: white;
-  border-radius: 20px;
-  padding: 35px;
-  position: relative;
+width: 100%;
+max-width: 500px;
+
+background: white;
+border-radius: 20px;
+padding: 35px;
+
+position: relative;
 }
 
 .modal-box h2 {
-  font-size: 30px;
-  font-weight: 700;
-  margin: 10px 0 25px;
+font-size: 30px;
+font-weight: 700;
+margin: 10px 0 25px;
 }
 
 .close-button {
-  position: absolute;
-  right: 22px;
-  top: 15px;
-  background: transparent;
-  font-size: 28px;
-  color: var(--text-light);
+position: absolute;
+right: 22px;
+top: 15px;
+
+background: transparent;
+
+font-size: 28px;
+color: var(--text-light);
 }
 
-
 /* =========================
-   UPLOAD
+UPLOAD
 ========================= */
 
 .upload-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border: 1.5px dashed var(--pink-light);
-  border-radius: 13px;
-  background: var(--pink-pale);
-  cursor: pointer;
-  overflow: hidden;
-  margin-bottom: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+width: 100%;
+aspect-ratio: 4 / 3;
+
+border: 1.5px dashed var(--pink-light);
+border-radius: 13px;
+
+background: var(--pink-pale);
+
+cursor: pointer;
+overflow: hidden;
+
+margin-bottom: 20px;
 }
 
 .upload-box input {
-  display: none;
+display: none;
 }
 
 #uploadContent {
-  text-align: center;
+text-align: center;
 }
 
 .upload-icon {
-  font-size: 35px;
-  color: var(--pink);
-  margin-bottom: 8px;
+font-size: 35px;
+color: var(--pink);
+margin-bottom: 8px;
 }
 
 #uploadContent strong {
-  display: block;
-  font-size: 13px;
+display: block;
+font-size: 13px;
 }
 
 #uploadContent span {
-  display: block;
-  color: var(--text-light);
-  font-size: 10px;
-  margin-top: 5px;
+display: block;
+color: var(--text-light);
+font-size: 10px;
+margin-top: 5px;
 }
 
 .image-preview {
-  display: none;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+display: none;
+
+width: 100%;
+height: 100%;
+
+object-fit: cover;
 }
 
-
 /* =========================
-   FORM
+FORM
 ========================= */
 
 .input-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 17px;
+display: block;
+
+font-size: 11px;
+font-weight: 700;
+
+margin-bottom: 17px;
 }
 
 .input-label input,
 .input-label textarea {
-  display: block;
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 13px;
-  margin-top: 7px;
-  outline: none;
-  font-size: 13px;
-  color: var(--text);
+display: block;
+
+width: 100%;
+
+border: 1px solid var(--line);
+border-radius: 10px;
+
+padding: 13px;
+margin-top: 7px;
+
+outline: none;
+
+font-size: 13px;
+color: var(--text);
 }
 
 .input-label textarea {
-  height: 110px;
-  resize: vertical;
+height: 110px;
+resize: vertical;
 }
 
 .input-label input:focus,
 .input-label textarea:focus {
-  border-color: var(--pink);
+border-color: var(--pink);
 }
 
 .submit-button {
-  width: 100%;
-  border-radius: 30px;
-  background: var(--pink-dark);
-  color: white;
-  padding: 14px;
-  font-size: 12px;
-  font-weight: 700;
+width: 100%;
+
+border-radius: 30px;
+
+background: var(--pink-dark);
+color: white;
+
+padding: 14px;
+
+font-size: 12px;
+font-weight: 700;
 }
 
-
 /* =========================
-   IMAGE VIEWER
+IMAGE VIEWER
 ========================= */
 
 .image-viewer {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  background: rgba(40, 15, 25, 0.92);
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
+display: none;
+
+position: fixed;
+inset: 0;
+
+z-index: 200;
+
+background: rgba(40, 15, 25, 0.92);
+
+align-items: center;
+justify-content: center;
+
+padding: 25px;
 }
 
 .image-viewer.show {
-  display: flex;
+display: flex;
 }
 
 .image-viewer img {
-  max-width: 95%;
-  max-height: 90vh;
-  object-fit: contain;
+max-width: 95%;
+max-height: 90vh;
+
+object-fit: contain;
 }
 
 .viewer-close {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  color: white;
-  background: transparent;
-  font-size: 35px;
+position: absolute;
+
+top: 15px;
+right: 25px;
+
+color: white;
+background: transparent;
+
+font-size: 35px;
 }
 
-
 /* =========================
-   MOBILE
+MOBILE
 ========================= */
 
 @media (max-width: 700px) {
 
-  .page {
-    padding: 20px 15px 45px;
-  }
+.page {
+padding: 20px 15px 45px;
+}
 
-  .hero {
-    padding-top: 45px;
-  }
+.hero {
+padding-top: 45px;
+}
 
-  .hero h1 {
-    font-size: 57px;
-  }
+.hero h1 {
+font-size: 57px;
+}
 
-  .intro-box {
-    padding: 27px 22px;
-  }
+.intro-box {
+padding: 27px 22px;
+}
 
-  .category-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
+.year-number {
+font-size: 55px;
+}
 
-  .category-card {
-    min-height: 230px;
-    padding: 20px;
-    border-radius: 15px;
-  }
+.year-decoration {
+font-size: 21px;
+}
 
-  .card-content {
-    left: 20px;
-    bottom: 23px;
-  }
+.current-year {
+padding: 8px 45px;
+}
 
-  .card-content h2 {
-    font-size: 26px;
-  }
+.category-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 10px;
+}
 
-  .card-content p {
-    font-size: 10px;
-    max-width: 120px;
-  }
+.category-card {
+min-height: 230px;
+padding: 20px;
+border-radius: 15px;
+}
 
-  .card-arrow {
-    right: 20px;
-    bottom: 20px;
-  }
+.card-content {
+left: 20px;
+bottom: 23px;
+}
 
-  .card-decoration {
-    right: 18px;
-    top: 18px;
-  }
+.card-content h2 {
+font-size: 26px;
+}
 
-  .subpage-header {
-    padding-bottom: 35px;
-  }
+.card-content p {
+font-size: 10px;
+max-width: 120px;
+}
 
-  .subpage-header h1 {
-    font-size: 37px;
-  }
+.card-arrow {
+right: 20px;
+bottom: 20px;
+}
 
-  .project-item {
-    padding: 18px;
-    gap: 12px;
-  }
+.card-decoration {
+right: 18px;
+top: 18px;
+}
 
-  .project-number {
-    width: 35px;
-    font-size: 23px;
-  }
+.subpage-header {
+padding-bottom: 35px;
+}
 
-  .project-info h2 {
-    font-size: 17px;
-  }
+.subpage-header h1 {
+font-size: 37px;
+}
 
-  .project-info p {
-    display: none;
-  }
+.project-item {
+padding: 18px;
+gap: 12px;
+}
 
-  .project-view {
-    padding: 9px 12px;
-    font-size: 10px;
-  }
+.project-number {
+width: 35px;
+font-size: 23px;
+}
 
-  .photo-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
+.project-info h2 {
+font-size: 17px;
+}
 
-  .message-header {
-    padding: 30px 23px;
-  }
+.project-info p {
+display: none;
+}
 
-  .message-header h2 {
-    font-size: 34px;
-  }
+.project-view {
+padding: 9px 12px;
+font-size: 10px;
+}
 
-  .message-list {
-    grid-template-columns: 1fr;
-  }
+.photo-gallery {
+grid-template-columns: repeat(2, 1fr);
+gap: 8px;
+}
 
-  .modal-box {
-    padding: 28px 20px;
-  }
+.message-header {
+padding: 30px 23px;
+}
+
+.message-header h2 {
+font-size: 34px;
+}
+
+.message-list {
+grid-template-columns: 1fr;
+}
+
+.modal-box {
+padding: 28px 20px;
+}
 }
