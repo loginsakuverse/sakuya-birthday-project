@@ -3,6 +3,7 @@
   src: url("./fonts/fonts/poti.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -10,7 +11,14 @@
   src: url("./fonts/fonts/MontserratAlternates-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
+
+
+/* =========================
+   RESET
+========================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -44,7 +52,7 @@ body {
 
 
 /* =========================
-   GENERAL
+   FONT INHERIT
 ========================= */
 
 button,
@@ -52,6 +60,11 @@ input,
 textarea {
   font-family: inherit;
 }
+
+
+/* =========================
+   GENERAL
+========================= */
 
 button {
   border: none;
@@ -72,7 +85,7 @@ button {
 
 
 /* =========================
-   HOME
+   HOME / HERO
 ========================= */
 
 .hero {
@@ -96,10 +109,10 @@ button {
 }
 
 .hero h1 {
-  font-family: "Pretty On The Inside", serif;
+  font-family: "Pretty On The Inside", cursive;
   font-size: clamp(55px, 9vw, 95px);
   line-height: 0.98;
-  font-weight: 600;
+  font-weight: normal;
   margin: 18px 0 25px;
 }
 
@@ -130,8 +143,8 @@ button {
 }
 
 .intro-box h2 {
-  font-family: "Playfair Display", serif;
   font-size: 28px;
+  font-weight: 700;
   margin-bottom: 15px;
 }
 
@@ -165,9 +178,8 @@ button {
 }
 
 .current-year {
-  font-family: "Playfair Display", serif;
   font-size: 52px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .year-arrow {
@@ -207,8 +219,8 @@ button {
 }
 
 .year-title strong {
-  font-family: "Playfair Display", serif;
   font-size: 25px;
+  font-weight: 700;
 }
 
 
@@ -275,8 +287,8 @@ button {
 }
 
 .card-content h2 {
-  font-family: "Playfair Display", serif;
   font-size: 42px;
+  font-weight: 700;
   margin: 8px 0;
 }
 
@@ -325,8 +337,8 @@ footer {
 }
 
 .subpage-header h1 {
-  font-family: "Playfair Display", serif;
   font-size: 48px;
+  font-weight: 700;
   margin-top: 5px;
 }
 
@@ -351,8 +363,8 @@ footer {
 }
 
 .page-intro h2 {
-  font-family: "Playfair Display", serif;
   font-size: 31px;
+  font-weight: 700;
   margin: 10px 0;
 }
 
@@ -383,8 +395,8 @@ footer {
 }
 
 .project-number {
-  font-family: "Playfair Display", serif;
   font-size: 30px;
+  font-weight: 700;
   color: var(--pink);
   width: 55px;
 }
@@ -400,8 +412,8 @@ footer {
 }
 
 .project-info h2 {
-  font-family: "Playfair Display", serif;
   font-size: 23px;
+  font-weight: 700;
   margin: 6px 0;
 }
 
@@ -456,8 +468,8 @@ footer {
 }
 
 .message-header h2 {
-  font-family: "Playfair Display", serif;
   font-size: 42px;
+  font-weight: 700;
   line-height: 1.05;
   margin: 12px 0;
 }
@@ -557,8 +569,8 @@ footer {
 }
 
 .modal-box h2 {
-  font-family: "Playfair Display", serif;
   font-size: 30px;
+  font-weight: 700;
   margin: 10px 0 25px;
 }
 
@@ -812,5 +824,4 @@ footer {
   .modal-box {
     padding: 28px 20px;
   }
-
 }
