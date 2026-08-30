@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Pretty On The Inside";
+  src: url("./fonts/fonts/poti.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("./fonts/fonts/MontserratAlternates-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,7 +36,7 @@ html {
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   background: var(--pink-bg);
   color: var(--text);
   min-height: 100vh;
@@ -83,7 +96,7 @@ button {
 }
 
 .hero h1 {
-  font-family: "Playfair Display", serif;
+  font-family: "Pretty On The Inside", serif;
   font-size: clamp(55px, 9vw, 95px);
   line-height: 0.98;
   font-weight: 600;
