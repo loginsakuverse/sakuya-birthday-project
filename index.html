@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 
 <html lang="vi">
@@ -13,212 +14,232 @@
 <body>
 
   <!-- =========================
+       BACKGROUND MUSIC
+  ========================== -->
+
+  <audio id="bgMusic" loop>
+    <source src="./music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- MUSIC BUTTON -->
+
+  <button
+    id="musicBtn"
+    class="music-btn"
+    aria-label="Music"
+  >
+    ♫
+  </button>
+
+
+  <!-- =========================
        HOME
   ========================== -->
 
   <main id="homePage" class="page active">
 
-```
-<!-- HERO -->
 
-<section class="hero">
+    <!-- HERO -->
 
-  <div class="hero-heart">♡</div>
+    <section class="hero">
 
-  <p class="eyebrow">
-    MEMORIES ARCHIVED
-  </p>
+      <div class="hero-heart">♡</div>
 
-  <h1>
-    A Memory<br>
-    For Sakuya
-  </h1>
+      <p class="eyebrow">
+        MEMORIES ARCHIVED
+      </p>
 
-  <p class="hero-subtitle">
-    A little place to keep<br>
-    our memories together ♡
-  </p>
+      <h1>
+        A Memory<br>
+        For Sakuya
+      </h1>
 
-</section>
+      <p class="hero-subtitle">
+        A little place to keep<br>
+        our memories together ♡
+      </p>
 
-
-<!-- INTRODUCTION -->
-
-<section class="intro-section">
-
-  <div class="section-label">
-    ABOUT THIS WEB
-  </div>
-
-  <div class="intro-box">
-
-    <h2>
-      Our little memory book
-    </h2>
-
-    <p>
-      Đây là nơi lưu giữ những khoảnh khắc,
-      những project và những lời nhắn mà mọi người
-      đã dành cho Sakuya.
-    </p>
-
-    <p>
-      Mỗi năm sẽ là một chương mới,
-      cùng nhau tạo nên thật nhiều kỷ niệm đẹp nhé ♡
-    </p>
-
-  </div>
-
-</section>
+    </section>
 
 
-<!-- YEARS -->
+    <!-- INTRODUCTION -->
 
-<section class="years-section">
+    <section class="intro-section">
 
-  <div class="section-label">
-    OUR YEARS
-  </div>
-
-  <div class="year-selector">
-
-    <button
-      class="current-year"
-      id="year2026Button"
-      aria-label="Open 2026"
-    >
-
-      <span class="year-decoration left">
-        ♡
-      </span>
-
-      <span class="year-number">
-        2026
-      </span>
-
-      <span class="year-decoration right">
-        ໒꒱
-      </span>
-
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- 2026 CONTENT -->
-
-<section
-  class="year-content"
-  id="year2026Content"
->
-
-  <div class="year-title">
-
-    <span>
-      CHAPTER
-    </span>
-
-    <strong>
-      2026
-    </strong>
-
-  </div>
-
-
-  <!-- TWO CARDS -->
-
-  <div class="category-grid">
-
-
-    <!-- PROJECT -->
-
-    <button
-      class="category-card project-card"
-      onclick="openPage('projectPage')"
-    >
-
-      <div class="card-number">
-        01
+      <div class="section-label">
+        ABOUT THIS WEB
       </div>
 
-      <div class="card-decoration">
-        ✦
-      </div>
-
-      <div class="card-content">
-
-        <span>
-          OUR JOURNEY
-        </span>
+      <div class="intro-box">
 
         <h2>
-          PROJECT
+          Our little memory book
         </h2>
 
         <p>
-          Những chặng đường
-          project đã thực hiện
+          Đây là nơi lưu giữ những khoảnh khắc,
+          những project và những lời nhắn mà mọi người
+          đã dành cho Sakuya.
+        </p>
+
+        <p>
+          Mỗi năm sẽ là một chương mới,
+          cùng nhau tạo nên thật nhiều kỷ niệm đẹp nhé ♡
         </p>
 
       </div>
 
-      <div class="card-arrow">
-        →
+    </section>
+
+
+    <!-- YEARS -->
+
+    <section class="years-section">
+
+      <div class="section-label">
+        OUR YEARS
       </div>
 
-    </button>
+      <div class="year-selector">
+
+        <button
+          class="current-year"
+          id="year2026Button"
+          aria-label="Open 2026"
+        >
+
+          <span class="year-decoration left">
+            ♡
+          </span>
+
+          <span class="year-number">
+            2026
+          </span>
+
+          <span class="year-decoration right">
+            ໒꒱
+          </span>
+
+        </button>
+
+      </div>
+
+    </section>
 
 
-    <!-- MESSAGE -->
+    <!-- 2026 CONTENT -->
 
-    <button
-      class="category-card message-card"
-      onclick="openPage('messagePage')"
+    <section
+      class="year-content"
+      id="year2026Content"
     >
 
-      <div class="card-number">
-        02
-      </div>
-
-      <div class="card-decoration">
-        ♡
-      </div>
-
-      <div class="card-content">
+      <div class="year-title">
 
         <span>
-          TỪ CÁC FAN VIỆT NAM CỦA SAKUYA
+          CHAPTER
         </span>
 
-        <h2>
-          LỜI NHẮN
-        </h2>
-
-        <p>
-          Lời nhắn dành cho Sakuya
-        </p>
+        <strong>
+          2026
+        </strong>
 
       </div>
 
-      <div class="card-arrow">
-        →
+
+      <!-- TWO CARDS -->
+
+      <div class="category-grid">
+
+
+        <!-- PROJECT -->
+
+        <button
+          class="category-card project-card"
+          onclick="openPage('projectPage')"
+        >
+
+          <div class="card-number">
+            01
+          </div>
+
+          <div class="card-decoration">
+            ✦
+          </div>
+
+          <div class="card-content">
+
+            <span>
+              OUR JOURNEY
+            </span>
+
+            <h2>
+              PROJECT
+            </h2>
+
+            <p>
+              Những chặng đường
+              project đã thực hiện
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            →
+          </div>
+
+        </button>
+
+
+        <!-- MESSAGE -->
+
+        <button
+          class="category-card message-card"
+          onclick="openPage('messagePage')"
+        >
+
+          <div class="card-number">
+            02
+          </div>
+
+          <div class="card-decoration">
+            ♡
+          </div>
+
+          <div class="card-content">
+
+            <span>
+              TỪ CÁC FAN VIỆT NAM CỦA SAKUYA
+            </span>
+
+            <h2>
+              LỜI NHẮN
+            </h2>
+
+            <p>
+              Lời nhắn dành cho Sakuya
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            →
+          </div>
+
+        </button>
+
       </div>
 
-    </button>
-
-  </div>
-
-</section>
+    </section>
 
 
-<footer>
-  LOGin SAKUverse ♡
-</footer>
-```
+    <footer>
+      LOGin SAKUverse ♡
+    </footer>
+
 
   </main>
+
 
   <!-- =========================
        PROJECT PAGE
@@ -226,159 +247,160 @@
 
   <main id="projectPage" class="page">
 
-```
-<header class="subpage-header">
 
-  <button
-    class="back-button"
-    onclick="openPage('homePage')"
-  >
-    ← Back
-  </button>
+    <header class="subpage-header">
 
-  <div>
+      <button
+        class="back-button"
+        onclick="openPage('homePage')"
+      >
+        ← Back
+      </button>
 
-    <span class="page-eyebrow">
-      2026
-    </span>
+      <div>
 
-    <h1>
-      Project
-    </h1>
+        <span class="page-eyebrow">
+          2026
+        </span>
 
-  </div>
+        <h1>
+          Project
+        </h1>
 
-</header>
+      </div>
 
-
-<section class="page-intro">
-
-  <span>
-    OUR JOURNEY
-  </span>
-
-  <h2>
-    Every step, a memory.
-  </h2>
-
-  <p>
-    Những chặng đường project
-    đã cùng nhau thực hiện trong năm 2026.
-  </p>
-
-</section>
+    </header>
 
 
-<!-- PROJECT TIMELINE -->
-
-<section class="project-list">
-
-
-  <!-- PROJECT 01 -->
-
-  <article class="project-item">
-
-    <div class="project-number">
-      01
-    </div>
-
-    <div class="project-info">
+    <section class="page-intro">
 
       <span>
-        2026.00.00
+        OUR JOURNEY
       </span>
 
       <h2>
-        Project Opening
+        Every step, a memory.
       </h2>
 
       <p>
-        Nội dung project sẽ được cập nhật tại đây.
+        Những chặng đường project
+        đã cùng nhau thực hiện trong năm 2026.
       </p>
 
-    </div>
-
-    <button
-      class="project-view"
-      onclick="openProjectGallery('project1')"
-    >
-      View →
-    </button>
-
-  </article>
+    </section>
 
 
-  <!-- PROJECT 02 -->
+    <!-- PROJECT TIMELINE -->
 
-  <article class="project-item">
-
-    <div class="project-number">
-      02
-    </div>
-
-    <div class="project-info">
-
-      <span>
-        2026.00.00
-      </span>
-
-      <h2>
-        Project Stage 02
-      </h2>
-
-      <p>
-        Nội dung project sẽ được cập nhật tại đây.
-      </p>
-
-    </div>
-
-    <button
-      class="project-view"
-      onclick="openProjectGallery('project2')"
-    >
-      View →
-    </button>
-
-  </article>
+    <section class="project-list">
 
 
-  <!-- PROJECT 03 -->
+      <!-- PROJECT 01 -->
 
-  <article class="project-item">
+      <article class="project-item">
 
-    <div class="project-number">
-      03
-    </div>
+        <div class="project-number">
+          01
+        </div>
 
-    <div class="project-info">
+        <div class="project-info">
 
-      <span>
-        2026.00.00
-      </span>
+          <span>
+            2026.00.00
+          </span>
 
-      <h2>
-        Project Completed
-      </h2>
+          <h2>
+            Project Opening
+          </h2>
 
-      <p>
-        Nội dung project sẽ được cập nhật tại đây.
-      </p>
+          <p>
+            Nội dung project sẽ được cập nhật tại đây.
+          </p>
 
-    </div>
+        </div>
 
-    <button
-      class="project-view"
-      onclick="openProjectGallery('project3')"
-    >
-      View →
-    </button>
+        <button
+          class="project-view"
+          onclick="openProjectGallery('project1')"
+        >
+          View →
+        </button>
 
-  </article>
+      </article>
 
-</section>
-```
+
+      <!-- PROJECT 02 -->
+
+      <article class="project-item">
+
+        <div class="project-number">
+          02
+        </div>
+
+        <div class="project-info">
+
+          <span>
+            2026.00.00
+          </span>
+
+          <h2>
+            Project Stage 02
+          </h2>
+
+          <p>
+            Nội dung project sẽ được cập nhật tại đây.
+          </p>
+
+        </div>
+
+        <button
+          class="project-view"
+          onclick="openProjectGallery('project2')"
+        >
+          View →
+        </button>
+
+      </article>
+
+
+      <!-- PROJECT 03 -->
+
+      <article class="project-item">
+
+        <div class="project-number">
+          03
+        </div>
+
+        <div class="project-info">
+
+          <span>
+            2026.00.00
+          </span>
+
+          <h2>
+            Project Completed
+          </h2>
+
+          <p>
+            Nội dung project sẽ được cập nhật tại đây.
+          </p>
+
+        </div>
+
+        <button
+          class="project-view"
+          onclick="openProjectGallery('project3')"
+        >
+          View →
+        </button>
+
+      </article>
+
+    </section>
+
 
   </main>
+
 
   <!-- =========================
        PROJECT GALLERY
@@ -386,40 +408,41 @@
 
   <main id="projectGalleryPage" class="page">
 
-```
-<header class="subpage-header">
 
-  <button
-    class="back-button"
-    onclick="openPage('projectPage')"
-  >
-    ← Project
-  </button>
+    <header class="subpage-header">
 
-  <div>
+      <button
+        class="back-button"
+        onclick="openPage('projectPage')"
+      >
+        ← Project
+      </button>
 
-    <span class="page-eyebrow">
-      PROJECT
-    </span>
+      <div>
 
-    <h1 id="galleryTitle">
-      Project
-    </h1>
+        <span class="page-eyebrow">
+          PROJECT
+        </span>
 
-  </div>
+        <h1 id="galleryTitle">
+          Project
+        </h1>
 
-</header>
+      </div>
+
+    </header>
 
 
-<section
-  id="projectGallery"
-  class="photo-gallery"
->
+    <section
+      id="projectGallery"
+      class="photo-gallery"
+    >
 
-</section>
-```
+    </section>
+
 
   </main>
+
 
   <!-- =========================
        MESSAGE PAGE
@@ -427,68 +450,69 @@
 
   <main id="messagePage" class="page">
 
-```
-<header class="subpage-header">
 
-  <button
-    class="back-button"
-    onclick="openPage('homePage')"
-  >
-    ← Back
-  </button>
+    <header class="subpage-header">
 
-  <div>
+      <button
+        class="back-button"
+        onclick="openPage('homePage')"
+      >
+        ← Back
+      </button>
 
-    <span class="page-eyebrow">
-      2026
-    </span>
+      <div>
 
-    <h1>
-      Message
-    </h1>
+        <span class="page-eyebrow">
+          2026
+        </span>
 
-  </div>
+        <h1>
+          Message
+        </h1>
 
-</header>
+      </div>
 
-
-<section class="message-header">
-
-  <span>
-    FROM YOU
-  </span>
-
-  <h2>
-    Leave something<br>
-    for Sakuya ♡
-  </h2>
-
-  <p>
-    Upload a photo, write your name
-    and leave a little message.
-  </p>
-
-  <button
-    class="main-button"
-    onclick="openMessageForm()"
-  >
-    + Leave a Message
-  </button>
-
-</section>
+    </header>
 
 
-<!-- MESSAGE LIST -->
+    <section class="message-header">
 
-<section
-  id="messageList"
-  class="message-list"
->
+      <span>
+        FROM YOU
+      </span>
 
-</section>
-```
+      <h2>
+        Leave something<br>
+        for Sakuya ♡
+      </h2>
+
+      <p>
+        Upload a photo, write your name
+        and leave a little message.
+      </p>
+
+      <button
+        class="main-button"
+        onclick="openMessageForm()"
+      >
+        + Leave a Message
+      </button>
+
+    </section>
+
+
+    <!-- MESSAGE LIST -->
+
+    <section
+      id="messageList"
+      class="message-list"
+    >
+
+    </section>
+
 
   </main>
+
 
   <!-- =========================
        MESSAGE MODAL
@@ -499,106 +523,107 @@
     class="modal"
   >
 
-```
-<div class="modal-box">
 
-  <button
-    class="close-button"
-    onclick="closeMessageForm()"
-  >
-    ×
-  </button>
+    <div class="modal-box">
 
-
-  <span class="page-eyebrow">
-    LEAVE A MESSAGE
-  </span>
-
-  <h2>
-    A little something<br>
-    for Sakuya ♡
-  </h2>
+      <button
+        class="close-button"
+        onclick="closeMessageForm()"
+      >
+        ×
+      </button>
 
 
-  <!-- PHOTO -->
-
-  <label class="upload-box">
-
-    <input
-      type="file"
-      id="photoInput"
-      accept="image/*"
-      onchange="previewImage(event)"
-    >
-
-    <div id="uploadContent">
-
-      <div class="upload-icon">
-        ♡
-      </div>
-
-      <strong>
-        Upload your photo
-      </strong>
-
-      <span>
-        Tap here to choose a photo
+      <span class="page-eyebrow">
+        LEAVE A MESSAGE
       </span>
+
+      <h2>
+        A little something<br>
+        for Sakuya ♡
+      </h2>
+
+
+      <!-- PHOTO -->
+
+      <label class="upload-box">
+
+        <input
+          type="file"
+          id="photoInput"
+          accept="image/*"
+          onchange="previewImage(event)"
+        >
+
+        <div id="uploadContent">
+
+          <div class="upload-icon">
+            ♡
+          </div>
+
+          <strong>
+            Upload your photo
+          </strong>
+
+          <span>
+            Tap here to choose a photo
+          </span>
+
+        </div>
+
+
+        <img
+          id="imagePreview"
+          class="image-preview"
+          alt="Preview"
+        >
+
+      </label>
+
+
+      <!-- NAME -->
+
+      <label class="input-label">
+
+        Your name
+
+        <input
+          type="text"
+          id="nameInput"
+          placeholder="Enter your name"
+          maxlength="50"
+        >
+
+      </label>
+
+
+      <!-- MESSAGE -->
+
+      <label class="input-label">
+
+        Your message
+
+        <textarea
+          id="messageInput"
+          placeholder="Write something for Sakuya..."
+          maxlength="500"
+        ></textarea>
+
+      </label>
+
+
+      <button
+        class="submit-button"
+        onclick="submitMessage()"
+      >
+        SEND ♡
+      </button>
 
     </div>
 
 
-    <img
-      id="imagePreview"
-      class="image-preview"
-      alt="Preview"
-    >
-
-  </label>
-
-
-  <!-- NAME -->
-
-  <label class="input-label">
-
-    Your name
-
-    <input
-      type="text"
-      id="nameInput"
-      placeholder="Enter your name"
-      maxlength="50"
-    >
-
-  </label>
-
-
-  <!-- MESSAGE -->
-
-  <label class="input-label">
-
-    Your message
-
-    <textarea
-      id="messageInput"
-      placeholder="Write something for Sakuya..."
-      maxlength="500"
-    ></textarea>
-
-  </label>
-
-
-  <button
-    class="submit-button"
-    onclick="submitMessage()"
-  >
-    SEND ♡
-  </button>
-
-</div>
-```
-
   </div>
+
 
   <!-- =========================
        IMAGE VIEWER
@@ -610,24 +635,24 @@
     onclick="closeImageViewer()"
   >
 
-```
-<button class="viewer-close">
-  ×
-</button>
+    <button class="viewer-close">
+      ×
+    </button>
 
-<img
-  id="viewerImage"
-  alt="Full image"
->
-```
+    <img
+      id="viewerImage"
+      alt="Full image"
+    >
 
   </div>
+
 
   <!-- =========================
        YEAR BUTTON
   ========================== -->
 
   <script>
+
     document
       .getElementById("year2026Button")
       .addEventListener("click", function () {
@@ -638,7 +663,9 @@
         content.classList.toggle("show");
 
       });
+
   </script>
+
 
   <!-- MAIN JAVASCRIPT -->
 
